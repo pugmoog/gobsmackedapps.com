@@ -25,7 +25,7 @@ const apps = [
         image: "placeholder-icon.png",
         link: "https://apple.com",
         price: "GET",
-        platforms: ["iphone", "ipad"]
+        platforms: ["iphone", "ipad", "mac"]
     },
     {
         title: "Lorem Ipsum",
@@ -33,7 +33,7 @@ const apps = [
         image: "placeholder-icon.png",
         link: "https://apple.com",
         price: "$0.99",
-        platforms: ["iphone"]
+        platforms: ["iphone", "watch"]
     },
     {
         title: "Lorem Ipsum",
@@ -59,10 +59,10 @@ container.innerHTML = apps.map(app => `
         <img src="${"app-icons/"+app.image}" class="app-icon" alt="${app.title}">
         
         <div class="app-info">
-            <div class="app-name">${app.title}
+            <div class="app-name">${app.title}<span class="platforms">
                         ${(app.platforms || [])
                                                 .map(p => `<img class="platform-icon" src="${platformIcons[p]}"></img>`)
-                                                .join("")}</div>
+                                                .join("")}</span></div>
             <div class="app-description">${app.description ?? ""}</div>
         </div>
 

@@ -183,13 +183,13 @@ li {
 .platform-icon {
     font-size: 0.8em;
     margin-left: 4px;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .platforms img {
-    width: 14px;
-    height: 14px;
+    width: auto;
+    height: 17px;
     margin-left: 3px;
     vertical-align: -2px;
-    opacity: 0.6;
+    opacity: 0.8;
 }
