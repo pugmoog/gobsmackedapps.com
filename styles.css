@@ -1,12 +1,195 @@
-#logo {
-    height:auto;
-    width: 200px;
-}
-.app-screen {
-    height:500px;
-    width: auto;
-}
 
 .center {
     text-align: center
+}
+
+body {
+    font-family:Georgia, "Times New Roman", serif;
+    background-color: white;
+}
+.padded {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;  /* space between logo and text */
+}
+
+#logo {
+    height: auto;
+    width: 200px;
+    flex-shrink: 0;  /* prevent logo from shrinking */
+}
+
+h1.header {
+    font-weight: normal;
+    font-size: 50px;
+    color: #aaaaaa;
+    margin: 0;
+}
+h2.header {
+    font-weight: normal;
+    font-size: 40px;
+    color: black;
+    margin: 0;
+    margin-top: 100px;
+    max-width: 800px;
+}
+li {
+    margin-top: 20px;
+}
+
+.screens-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.screens {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.app-screen {
+  flex-shrink: 0;
+  width: 300px;
+  height: auto;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.app-btn {
+  width: 45%;
+  max-width: 160px;
+  color: #fff;
+  margin: 20px 10px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.app-btn.blu {
+  background-color: #101010;
+  transition: background-color 0.25s linear;
+}
+.app-btn.blu:hover {
+  background-color: #454545;
+}
+.app-btn img {
+  width: 20%;
+  text-align: center;
+  font-size: 28px;
+  margin-right: 7px;
+}
+.app-btn .big-txt {
+  font-size: 17px;
+  text-transform: capitalize;
+}
+
+
+
+
+
+
+.app-store-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 320px;
+    padding: 12px;
+
+    background: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 18px;
+
+    text-decoration: none;
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+    transition: background 0.2s;
+}
+
+.app-store-item:hover {
+    background: #efefef;
+}
+
+.app-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.app-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.app-name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.app-description {
+    font-size: 13px;
+    color: #777;
+    margin-top: 3px;
+}
+
+.app-get {
+    background: #007AFF;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    padding: 8px 18px;
+    border-radius: 999px;
+
+    flex-shrink: 0;
+}
+
+.app-price {
+    background: #f1f1f5;
+    color: #007AFF;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.platform-icon {
+    font-size: 0.8em;
+    margin-left: 4px;
+    opacity: 0.7;
+}
+
+.platforms img {
+    width: 14px;
+    height: 14px;
+    margin-left: 3px;
+    vertical-align: -2px;
+    opacity: 0.6;
 }

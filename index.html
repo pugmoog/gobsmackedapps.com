@@ -5,10 +5,50 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-      <img src="logo.png" id="logo">
-      <h1 class="center">Gobsmacked Apps</h1>
-      <h3 class="center">Apps that you'd think would exist by now, but don't.</h3>
-      <img src="app example placeholder.jpg" class="app-screen">
+      <div class="padded">
+      <div class="header-container">
+        <img src="other-images/logo.png" id="logo" alt="Logo">
+        <h1 class="header">GOBSMACKED, LLC</h1>
+      </div>
+      <h3 class="center inline">Apps that you'd think would exist by now, but don't.</h3>
+      </div>
+      <div class="screens-wrapper">
+      <div class="screens">
+          <img src="app-screens/app example placeholder.jpg" class="app-screen"></img>
+          <img src="app-screens/app example placeholder.jpg" class="app-screen"></img>
+          <img src="app-screens/app example placeholder.jpg" class="app-screen"></img>
+          <img src="app-screens/app example placeholder.jpg" class="app-screen"></img>
+          
+          <img src="app-screens/app example placeholder.jpg" class="app-screen"></img>
+          <img src="app-screens/app example placeholder.jpg" class="app-screen"></img>
+          <img src="app-screens/app example placeholder.jpg" class="app-screen"></img>
+          <img src="app-screens/app example placeholder.jpg" class="app-screen"></img>
+      </div>
+      </div>
+      <div class="padded">
+        <h2 class="header">WE BUILD OUR APPS FOR HUMANITY, PRODUCTIVITY, AND TACOS</h2>
+        <h3><ul><li>Our apps don't separate people by getting them addicted to their phones, instead they bring people together.</li>
+        <li>Blah</li>
+        <li>Blah</li>
+        <ul></h3>
+        <h2 class="header">OUR APPS</h2>
+        <div style="display: flex; justify-content: left; gap: 20px; flex-wrap: wrap;">
+          <a class="app-btn blu flex" href="https://apple.com">
+            <img src="other-images/apple.png" alt="Apple">
+            <p>See us on the <br/> <span class="big-txt">App Store</span></p>
+          </a>
+
+          <a class="app-btn blu flex" style="background-color:#1D74F2;" href="mailto:mortimer@gobsmackedapps.com">
+            <img src="other-images/mail.png" alt="Apple">
+            <p>Contact us at <br/> <span class="big-txt">Our email</span></p>
+          </a>
+        </div>
+        <h3>We are constantly making new apps, but here are our current ones:</h3>
+        
+        <div class="apps-grid" id="apps-grid">
+        </div>
+
+      </div>
       <script src="script.js"></script>
   </body>
 </html>
