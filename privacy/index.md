@@ -1,4 +1,4 @@
-#Gobsmacked Apps Privacy Policy
+# Gobsmacked Apps Privacy Policy
 
 **Effective date: July 23, 2026**
 
@@ -6,13 +6,13 @@ Gobsmacked LLC develops and provides mobile applications under the Gobsmacked Ap
 
 The features and data practices of each Gobsmacked app may differ. The App-Specific Privacy Practices section below explains how this policy applies to individual applications.
 
-##Information You Enter
+## Information You Enter
 
 Gobsmacked apps may allow you to enter information to perform calculations, create content, customize an experience, save preferences, or generate results.
 
 Unless an app’s specific disclosure below states otherwise, information entered into a Gobsmacked app is processed locally on your device. Gobsmacked LLC does not receive, collect, store, or have access to that information.
 
-##Local Data and Storage
+## Local Data and Storage
 
 Gobsmacked apps may store information, preferences, settings, or saved work locally on your device.
 
@@ -23,7 +23,7 @@ Unless an app’s specific disclosure states otherwise:
 - You can remove it using the app’s available reset or deletion functions or by deleting the app from your device.
 - Deleting an app generally removes information stored within that app. It may not remove files or reports that you previously exported to another location.
 
-##Exported and Shared Content
+## Exported and Shared Content
 
 Some Gobsmacked apps may allow you to create, save, export, print, or share reports, images, documents, calculations, or other content.
 
@@ -31,7 +31,7 @@ Exporting or sharing is initiated by you. Once content is saved or shared, its h
 
 You are responsible for reviewing exported content and protecting any personal, financial, or sensitive information it contains before sharing it.
 
-##Information We Collect
+## Information We Collect
 
 Our general practice is to minimize data collection. Unless an app-specific disclosure states otherwise, Gobsmacked LLC does not use its apps to collect:
 
@@ -47,7 +47,7 @@ Our general practice is to minimize data collection. Unless an app-specific disc
 - Tracking information
 - If a Gobsmacked app collects or transmits any of these data types, that app’s specific disclosure will identify the information collected, its purpose, whether it is linked to the user, and whether it is shared with a third party.
 
-##Device Permissions
+## Device Permissions
 
 Certain Gobsmacked apps may request access to device features such as the camera, microphone, photo library, files, location, or notifications.
 
@@ -57,7 +57,7 @@ Granting permission does not necessarily mean Gobsmacked LLC receives the underl
 
 You can manage device permissions through your device’s settings.
 
-##Third-Party Services
+## Third-Party Services
 
 Gobsmacked apps use Apple’s operating-system, App Store, and device services for distribution and operation. Apple may process information under its own privacy policies and terms.
 
@@ -65,7 +65,7 @@ Some Gobsmacked apps may use external data providers, cloud services, analytics 
 
 Gobsmacked LLC does not authorize third parties to use information collected through its apps for unrelated advertising or tracking unless this practice is expressly disclosed.
 
-##Advertising and Tracking
+## Advertising and Tracking
 
 Unless an app-specific disclosure states otherwise, Gobsmacked apps:
 
@@ -75,7 +75,7 @@ Unless an app-specific disclosure states otherwise, Gobsmacked apps:
 - Do not sell personal information
 - If these practices change for a particular app, this policy and the applicable App Store privacy disclosures will be updated before or when the change is introduced.
 
-##Data Sharing and Sale
+## Data Sharing and Sale
 
 Gobsmacked LLC does not sell or rent personal information.
 
@@ -83,7 +83,7 @@ Gobsmacked LLC does not share information entered into an app when that informat
 
 If a particular app transmits information to Gobsmacked LLC or a service provider, its app-specific disclosure will explain what is transmitted, why it is transmitted, and how it is handled.
 
-##Data Retention and Deletion
+## Data Retention and Deletion
 
 Information stored only on your device remains there until you delete it through the app, reset the app’s data, or delete the app.
 
@@ -91,7 +91,7 @@ Exported files remain in the location where you saved or shared them until you o
 
 If a Gobsmacked app stores information on a server or uses a user account, its app-specific disclosure will explain the applicable retention and deletion procedures.
 
-##Purchases
+## Purchases
 
 Some Gobsmacked apps may offer in-app purchases through Apple’s App Store. Apple processes payment and transaction information according to Apple’s policies.
 
@@ -99,13 +99,13 @@ Gobsmacked LLC does not directly receive your complete payment-card information 
 
 The app may receive purchase-status information from Apple when necessary to provide, restore, or verify purchased functionality.
 
-##Security
+## Security
 
 Gobsmacked LLC uses reasonable measures appropriate to the nature of the information handled by its apps. However, no device, transmission method, or electronic-storage system can be guaranteed to be completely secure.
 
 Users are responsible for maintaining the security of their devices, accounts, and any content they export or share.
 
-##Changes to This Privacy Policy
+## Changes to This Privacy Policy
 
 Gobsmacked LLC may update this Privacy Policy as its applications, services, and legal obligations change.
 
@@ -115,9 +115,9 @@ Updates will be posted on this page with a revised effective date. Material chan
 
 
 
-##App-Specific Privacy Practices
+## App-Specific Privacy Practices
 
-###More-House
+### More-House
 
 More-House is an educational home-buying planning application.
 
@@ -127,7 +127,7 @@ More-House is an educational planning tool and does not provide tax, legal, lend
 
 
 
-##Contact Us
+## Contact Us
 
 Questions about this Privacy Policy or the privacy practices of a Gobsmacked app may be directed to:
 
@@ -136,7 +136,7 @@ Questions about this Privacy Policy or the privacy practices of a Gobsmacked app
 Email: mortimer@gobsmackedapps.com
 Arlington, Virginia, United States
 
-##How to use this policy
+## How to use this policy
 
 Use the same URL in all apps:
 
