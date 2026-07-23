@@ -118,7 +118,7 @@ Updates will be posted on this page with a revised effective date. Material chan
 ## App-Specific Privacy Practices
 
 <details>
-<summary style="display: inline-block;"><h3>More-House</h3></summary>
+<summary style="display: inline-block;"><h3>▶︎ More-House</h3></summary>
 
 More-House is an educational home-buying planning application.
 
