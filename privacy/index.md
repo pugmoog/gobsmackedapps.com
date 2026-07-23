@@ -117,14 +117,14 @@ Updates will be posted on this page with a revised effective date. Material chan
 
 ## App-Specific Privacy Practices
 
-### More-House
+<details><summary><h3>More-House</h3></summary>
 
 More-House is an educational home-buying planning application.
 
 Users may enter income, rent, savings, mortgage assumptions, property expenses, tax information, household expenses, and other financial estimates. This information is used to perform calculations and generate results within the app.
 
 More-House is an educational planning tool and does not provide tax, legal, lending, insurance, investment, appraisal, or real-estate advice.
-
+</details>
 
 
 ## Contact Us
