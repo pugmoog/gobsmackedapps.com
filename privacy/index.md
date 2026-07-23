@@ -118,7 +118,7 @@ Updates will be posted on this page with a revised effective date. Material chan
 ## App-Specific Privacy Practices
 
 <details>
-<summary><h3>More-House</h3></summary>
+<summary style="display: inline-block;"><h3>More-House</h3></summary>
 
 More-House is an educational home-buying planning application.
 
@@ -132,9 +132,9 @@ More-House is an educational planning tool and does not provide tax, legal, lend
 
 Questions about this Privacy Policy or the privacy practices of a Gobsmacked app may be directed to:
 
-**Gobsmacked LLC**
-**Gobsmacked Apps**
-Email: mortimer@gobsmackedapps.com
+**Gobsmacked LLC**<br>
+**Gobsmacked Apps**<br>
+Email: <a href="mortimer@gobsmackedapps.com">mortimer@gobsmackedapps.com</a><br>
 Arlington, Virginia, United States
 
 ## How to use this policy
@@ -142,17 +142,18 @@ Arlington, Virginia, United States
 Use the same URL in all apps:
 
 https://gobsmackedapps.com/privacy
+
 Inside each app, provide:
 
 Settings or Information
-→ About & Legal
-→ Privacy Policy
+- About & Legal
+- Privacy Policy
 For More-House, enter that URL in:
 
 App Store Connect
-→ More-House
-→ App Privacy
-→ Privacy Policy
+- More-House
+- App Privacy
+- Privacy Policy
 The Apple privacy questionnaire must still be completed separately for each app. A common policy does not mean every app should receive the same questionnaire answers.
 
 Before releasing each new app, add its specific section to the policy and audit its code for:
