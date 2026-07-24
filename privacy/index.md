@@ -128,6 +128,28 @@ More-House is an educational planning tool and does not provide tax, legal, lend
 </details>
 
 
+<details>
+<summary style="display: inline-block;"><h3>▶︎ Red-Handed</h3></summary>
+
+Red-Handed is an entertainment application.
+
+Users' conversations, responses, and settings are stored locally on the device. The app does not require accounts or personal information, and Gobsmacked Apps does not receive or store conversation content or payment information. Premium purchases are processed through Apple's App Store.
+
+Any future analytics would be limited to anonymous, aggregated usage data used solely to improve app quality and reliability.
+</details>
+
+
+<details>
+<summary style="display: inline-block;"><h3>▶︎ Eye on the Sky</h3></summary>
+
+Eye on the Sky is an aircraft identification application.
+
+Flight identification history, observations, and preferences are stored locally on the user's device. The app does not require accounts or personal information, and Gobsmacked Apps does not maintain a centralized user database. The app retrieves publicly available flight data from third-party aviation providers solely for aircraft identification.
+
+Any future analytics would be limited to anonymous, aggregated usage data used solely to improve app performance and reliability.
+</details>
+
+
 ## Contact Us
 
 Questions about this Privacy Policy or the privacy practices of a Gobsmacked app may be directed to:
