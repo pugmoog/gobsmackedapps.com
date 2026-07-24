@@ -156,7 +156,7 @@ Questions about this Privacy Policy or the privacy practices of a Gobsmacked app
 
 **Gobsmacked LLC**<br>
 **Gobsmacked Apps**<br>
-Email: <a href="mortimer@gobsmackedapps.com">mortimer@gobsmackedapps.com</a><br>
+Email: <a href="mailto:mortimer@gobsmackedapps.com">mortimer@gobsmackedapps.com</a><br>
 Arlington, Virginia, United States
 
 ## How to use this policy
