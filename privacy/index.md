@@ -129,6 +129,19 @@ More-House is an educational planning tool and does not provide tax, legal, lend
 
 
 <details>
+<summary style="display: inline-block;"><h3>▶︎ Eye on the Sky</h3></summary>
+
+Eye on the Sky uses your device's location, with your permission, to identify aircraft operating nearby. Your exact location is used only on your iPhone and is never shared with Gobsmacked Apps, the aircraft-data provider or anyone else.
+
+To request information about nearby aircraft, the app deliberately anonymizes your location by rounding it before sending it to the aircraft-data provider. This rounded location identifies only your general area—not your precise position. This privacy measure is built into the app to prevent your exact location from being disclosed.
+
+You may control or withdraw location access at any time through your iPhone settings. However, because location is necessary to determine which aircraft are nearby, Eye on the Sky will not function without location access.
+
+Aircraft information is obtained from third-party aviation data services, whose handling of requests is subject to their own privacy practices. Eye on the Sky stores identified-flight history and app preferences locally on your iPhone. Gobsmacked Apps does not receive, maintain or sell this locally stored information. Deleting the app removes information stored by the app on that device, subject to standard device backups managed by you or your platform provider.
+</details>
+
+
+<details>
 <summary style="display: inline-block;"><h3>▶︎ Red-Handed</h3></summary>
 
 Red-Handed is an entertainment application.
@@ -136,17 +149,6 @@ Red-Handed is an entertainment application.
 Users' conversations, responses, and settings are stored locally on the device. The app does not require accounts or personal information, and Gobsmacked Apps does not receive or store conversation content or payment information. Premium purchases are processed through Apple's App Store.
 
 Any future analytics would be limited to anonymous, aggregated usage data used solely to improve app quality and reliability.
-</details>
-
-
-<details>
-<summary style="display: inline-block;"><h3>▶︎ Eye on the Sky</h3></summary>
-
-Eye on the Sky is an aircraft identification application.
-
-Flight identification history, observations, and preferences are stored locally on the user's device. The app does not require accounts or personal information, and Gobsmacked Apps does not maintain a centralized user database. The app retrieves publicly available flight data from third-party aviation providers solely for aircraft identification.
-
-Any future analytics would be limited to anonymous, aggregated usage data used solely to improve app performance and reliability.
 </details>
 
 

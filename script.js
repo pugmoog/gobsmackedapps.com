@@ -123,28 +123,28 @@ const apps = [
         description: "An educational home-buying planning and financial estimate tool.",
         image: "more-house.png",
         link: "https://pugmoog.github.io/datow#i dont have the links yet so im putting this",
-        price: "GET"
+        price: "N/A"
     },
     {
         title: "Red-Handed",
         description: "A truth detector app that you can use to play tricks on your kids.",
         image: "red-handed.png",
         link: "https://pugmoog.github.io/datow#i dont have the links yet so im putting this",
-        price: "GET"
+        price: "N/A"
     },
     {
         title: "Eye on the Sky",
         description: "An aircraft identification app using publicly available flight data.",
         image: "placeholder-icon.png", // need icon
         link: "https://pugmoog.github.io/datow#i dont have the links yet so im putting this",
-        price: "GET"
+        price: "N/A"
     },
     {
         title: "Recipe Hog",
         description: "An app to save, organize, and share all your favorite recipes.",
         image: "recipe-hog.png",
         link: "https://pugmoog.github.io/datow#i dont have the links yet so im putting this",
-        price: "GET"
+        price: "N/A"
     },
 ];
 
