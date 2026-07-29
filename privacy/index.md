@@ -160,34 +160,3 @@ Questions about this Privacy Policy or the privacy practices of a Gobsmacked app
 **Gobsmacked Apps**<br>
 Email: <a href="mailto:mortimer@gobsmackedapps.com">mortimer@gobsmackedapps.com</a><br>
 Arlington, Virginia, United States
-
-## How to use this policy
-
-Use the same URL in all apps:
-
-https://gobsmackedapps.com/privacy
-
-Inside each app, provide:
-
-Settings or Information
-- About & Legal
-- Privacy Policy
-For More-House, enter that URL in:
-
-App Store Connect
-- More-House
-- App Privacy
-- Privacy Policy
-The Apple privacy questionnaire must still be completed separately for each app. A common policy does not mean every app should receive the same questionnaire answers.
-
-Before releasing each new app, add its specific section to the policy and audit its code for:
-
-- Analytics and crash-reporting tools
-- External APIs
-- Accounts and cloud storage
-- Advertising
-- Camera, microphone, photo, file, and location access
-- User-generated or shared content
-- Purchases and restored entitlements
-- Information transmitted off the device
-This gives Gobsmacked Apps a consistent standard while allowing each application’s disclosures to remain accurate.
