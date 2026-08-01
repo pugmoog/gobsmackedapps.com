@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const screenSources = Array.from(
         { length: 7 },
-        (_, index) => `app-screens/${index + 1}.png`
+        (_, index) => `../app-screens/${index + 1}.png`
     );
     const pixelsPerSecond = 45;
     const items = [...track.querySelectorAll(".phone-item")].map(element => ({
@@ -116,59 +116,43 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const apps = [
-    // descriptions are max 64 chars long to fit the app box
-    // links go nowhere now; will soon lead to app store page
     {
         title: "More-House",
         description: "An educational home-buying planning and financial estimate tool.",
         image: "more-house.png",
-        link: "https://pugmoog.github.io/datow#i dont have the links yet so im putting this",
-        price: "N/A"
+        status: "Coming soon"
     },
     {
         title: "Red-Handed",
         description: "A truth detector app that you can use to play tricks on your kids.",
         image: "red-handed.png",
-        link: "https://pugmoog.github.io/datow#i dont have the links yet so im putting this",
-        price: "N/A"
+        status: "Coming soon"
     },
     {
         title: "Eye on the Sky",
         description: "An aircraft identification app using publicly available flight data.",
-        image: "placeholder-icon.png", // need icon
-        link: "https://pugmoog.github.io/datow#i dont have the links yet so im putting this",
-        price: "N/A"
+        image: "placeholder-icon.png",
+        status: "Coming soon"
     },
     {
         title: "Recipe Hog",
         description: "An app to save, organize, and share all your favorite recipes.",
         image: "recipe-hog.png",
-        link: "https://pugmoog.github.io/datow#i dont have the links yet so im putting this",
-        price: "N/A"
+        status: "Coming soon"
     },
 ];
 
-const platformIcons = {
-    iphone: "platform-icons/iphone.png",
-    ipad: "platform-icons/ipad.png",
-    mac: "platform-icons/macbook.png",
-    watch: "platform-icons/applewatch.png"
-};
-
 const container = document.getElementById("apps-grid");
 
-container.innerHTML = apps.map(app => `
-    <a href="${app.link}" class="app-store-item">
-        <img src="${"app-icons/"+app.image}" class="app-icon" alt="${app.title}">
+if (container) container.innerHTML = apps.map(app => `
+    <article class="app-store-item">
+        <img src="${`../app-icons/${app.image}`}" class="app-icon" alt="${app.title} app icon">
         
         <div class="app-info">
-            <div class="app-name">${app.title}<span class="platforms">
-                        ${(app.platforms || [])
-                                                .map(p => `<img class="platform-icon" src="${platformIcons[p]}"></img>`)
-                                                .join("")}</span></div>
-            <div class="app-description">${app.description ?? ""}</div>
+            <div class="app-name">${app.title}</div>
+            <div class="app-description">${app.description}</div>
         </div>
 
-        <div class="app-get">${app.price ?? "GET"}</div>
-    </a>
+        <div class="app-status">${app.status}</div>
+    </article>
 `).join("");

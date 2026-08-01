@@ -1,58 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Gobsmacked, LLC</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gobsmacked Apps builds thoughtful mobile apps that make everyday life simpler, clearer, and more enjoyable.">
+    <title>Our Mission | Gobsmacked Apps</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-      <div class="padded">
-      <div class="header-container">
-        <img src="other-images/logo.png" id="logo" alt="Logo">
-        <h1 class="header">GOBSMACKED, LLC</h1>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/" aria-label="Gobsmacked Apps home">
+          <img src="other-images/logo.png" class="brand-logo" alt="">
+          <span>GOBSMACKED, LLC</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-current="page">Mission</a>
+          <a href="/apps/">Apps</a>
+          <a href="/privacy/">Privacy</a>
+        </nav>
       </div>
-      <h3 class="center inline">Apps that you'd think would exist by now, but don't.</h3>
-      </div>
-      <div class="screens-wrapper">
-      <div class="screens">
-          <div class="phone-item"><div class="phone-screen"><img src="app-screens/1.png" class="app-screen" alt="App screenshot"></div><img src="other-images/outerphone.png" class="phone-frame" alt=""></div>
-          <div class="phone-item"><div class="phone-screen"><img src="app-screens/6.png" class="app-screen" alt="App screenshot"></div><img src="other-images/outerphone.png" class="phone-frame" alt=""></div>
-          <div class="phone-item"><div class="phone-screen"><img src="app-screens/3.png" class="app-screen" alt="App screenshot"></div><img src="other-images/outerphone.png" class="phone-frame" alt=""></div>
-          <div class="phone-item"><div class="phone-screen"><img src="app-screens/4.png" class="app-screen" alt="App screenshot"></div><img src="other-images/outerphone.png" class="phone-frame" alt=""></div>
-          <div class="phone-item"><div class="phone-screen"><img src="app-screens/2.png" class="app-screen" alt="App screenshot"></div><img src="other-images/outerphone.png" class="phone-frame" alt=""></div>
-          <div class="phone-item"><div class="phone-screen"><img src="app-screens/5.png" class="app-screen" alt="App screenshot"></div><img src="other-images/outerphone.png" class="phone-frame" alt=""></div>
-          <div class="phone-item"><div class="phone-screen"><img src="app-screens/1.png" class="app-screen" alt="App screenshot"></div><img src="other-images/outerphone.png" class="phone-frame" alt=""></div>
-          <div class="phone-item"><div class="phone-screen"><img src="app-screens/7.png" class="app-screen" alt="App screenshot"></div><img src="other-images/outerphone.png" class="phone-frame" alt=""></div>
-      </div>
-      </div>
-      <div class="padded">
-        <h2 class="header">OUR MISSION</h2>
-        <br>At Gobsmacked Apps, we believe technology should make everyday life simpler, more understandable, and a little more enjoyable. We build thoughtfully designed mobile apps that solve real problems, answer meaningful questions, and create moments worth sharing. Whether we’re helping someone make an important financial decision, better understand a complex topic, or simply enjoy a laugh with friends and family, our goal is to deliver practical tools that people genuinely enjoy using.
-        <h2 style="font-weight:normal">All of our apps do at least one of the following:</h4>
-        <ul><li><h3>Simplify Hard Questions</h3> by transforming complicated topics into clear, intuitive experiences that anyone can understand. We believe valuable information shouldn’t require specialized knowledge to be useful.</li>
-        <li><h3>Make Data Usable</h3>by getting data from APIs, calculations, and even users and turning it into an easy to read, intuitive format. Data has the greatest value when it is presented in a way that is accessible and actionable.</li>
-        <li><h3>Bring People Together</h3>by creating experiences that encourage conversation, connection, and shared moments. Some of our apps are designed to solve serious problems, while others exist simply to spark laughter and strengthen relationships.
-            </li></ul>
-        <strong>Every app we create is guided by a simple philosophy: if we can save someone time, reduce uncertainty, help them make a better decision, or create a memorable moment with the people around them, we’ve accomplished our mission.</strong>
-        <ul>
-        <h2 class="header">OUR APPS</h2>
-        <div style="display: flex; justify-content: left; gap: 20px; flex-wrap: wrap;">
-          <a class="app-btn blu flex" href="https://apple.com">
-            <img src="other-images/apple.png" alt="Apple">
-            <p>See us on the <br/> <span class="big-txt">App Store</span></p>
-          </a>
+    </header>
 
-          <a class="app-btn blu flex" style="background-color:#1D74F2;" href="mailto:mortimer@gobsmackedapps.com">
-            <img src="other-images/mail.png" alt="Apple">
-            <p>Contact us at <br/> <span class="big-txt">Our email</span></p>
-          </a>
+    <main>
+      <section class="mission-hero page-shell">
+        <p class="eyebrow">OUR MISSION</p>
+        <h1>Apps that you’d think would exist by now, but don’t.</h1>
+        <p class="hero-copy">At Gobsmacked Apps, we believe technology should make everyday life simpler, more understandable, and a little more enjoyable.</p>
+      </section>
+
+      <section class="mission-intro page-shell narrow-shell">
+        <p>We build thoughtfully designed mobile apps that solve real problems, answer meaningful questions, and create moments worth sharing. Whether we’re helping someone make an important financial decision, better understand a complex topic, or simply enjoy a laugh with friends and family, our goal is to deliver practical tools that people genuinely enjoy using.</p>
+      </section>
+
+      <section class="principles-section page-shell" aria-labelledby="principles-title">
+        <div class="section-heading">
+          <p class="eyebrow">WHAT GUIDES US</p>
+          <h2 id="principles-title">Every app we make does at least one of three things.</h2>
         </div>
-        <h3>We are constantly making new apps, but here are our current ones:</h3>
-        
-        <div class="apps-grid" id="apps-grid">
+
+        <div class="principles-grid">
+          <article class="principle-card">
+            <span class="principle-number">01</span>
+            <h3>Simplify Hard Questions</h3>
+            <p>We transform complicated topics into clear, intuitive experiences that anyone can understand. Valuable information shouldn’t require specialized knowledge to be useful.</p>
+          </article>
+          <article class="principle-card">
+            <span class="principle-number">02</span>
+            <h3>Make Data Usable</h3>
+            <p>We turn data from APIs, calculations, and users into clear, actionable information. Data has the greatest value when it is easy to read and understand.</p>
+          </article>
+          <article class="principle-card">
+            <span class="principle-number">03</span>
+            <h3>Bring People Together</h3>
+            <p>We create experiences that encourage conversation, connection, and shared moments—whether they solve a serious problem or simply spark laughter.</p>
+          </article>
         </div>
-        <hr>
-<br>Also, here's our <a href="privacy">privacy policy</a>.
+      </section>
+
+      <section class="mission-closing page-shell narrow-shell">
+        <blockquote>“If we can save someone time, reduce uncertainty, help them make a better decision, or create a memorable moment with the people around them, we’ve accomplished our mission.”</blockquote>
+        <a class="text-link" href="/apps/">Explore our apps <span aria-hidden="true">→</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-shell footer-inner">
+        <p>© 2026 Gobsmacked, LLC</p>
+        <a href="mailto:mortimer@gobsmackedapps.com">mortimer@gobsmackedapps.com</a>
       </div>
-      <script src="script.js"></script>
+    </footer>
   </body>
 </html>
