@@ -600,7 +600,11 @@ a {
   }
 
   .app-store-item {
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr);
     align-items: flex-start;
+    column-gap: 16px;
+    row-gap: 12px;
     padding: 18px;
   }
 
@@ -610,7 +614,8 @@ a {
   }
 
   .app-status {
-    display: none;
+    grid-column: 2;
+    justify-self: start;
   }
 
   .policy-hero {
