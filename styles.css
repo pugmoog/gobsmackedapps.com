@@ -283,6 +283,7 @@ a {
   justify-content: space-between;
   max-width: none;
   gap: 40px;
+  scroll-margin-top: 112px;
 }
 
 .catalog-heading > p {
