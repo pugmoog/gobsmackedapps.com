@@ -47,12 +47,20 @@
       const setText = (id, value) => { document.getElementById(id).textContent = value || ''; };
 
       try {
-        // Messages keeps query parameters attached to the tappable URL. The
-        // fragment fallback supports links from earlier experimental builds.
-        const payload = new URLSearchParams(location.search).get('recipe') || location.hash.slice(1);
-        const parts = payload.split('.');
-        if (parts.length !== 3 || parts[0] !== '1') throw new Error('Unsupported recipe link');
-        const metadata = JSON.parse(decodeText(parts[1]));
+        const fragment = location.hash.slice(1);
+        let metadata;
+        let imageBytes;
+        if (fragment && !fragment.includes('.')) {
+          metadata = JSON.parse(decodeText(fragment));
+          if (metadata.v !== 2) throw new Error('Unsupported recipe link');
+        } else {
+          // Accept the earlier image-bearing fragment and query formats.
+          const payload = new URLSearchParams(location.search).get('recipe') || fragment;
+          const parts = payload.split('.');
+          if (parts.length !== 3 || parts[0] !== '1') throw new Error('Unsupported recipe link');
+          metadata = JSON.parse(decodeText(parts[1]));
+          imageBytes = parts[2] ? decodeBase64URL(parts[2]) : null;
+        }
         setText('name', metadata.n);
         setText('info', metadata.f);
         setText('ingredients', metadata.i);
@@ -61,9 +69,9 @@
         setText('source', metadata.s || 'unknown');
         document.getElementById('notes-section').hidden = !metadata.o;
 
-        if (parts[2]) {
+        if (imageBytes && imageBytes.length) {
           const image = document.getElementById('recipe-image');
-          image.src = URL.createObjectURL(new Blob([decodeBase64URL(parts[2])], { type: 'image/jpeg' }));
+          image.src = URL.createObjectURL(new Blob([imageBytes], { type: 'image/jpeg' }));
           image.style.display = 'block';
         }
         document.getElementById('recipe').hidden = false;
