@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+  <title>Shared Recipe</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; color: #351f27; background: #fffaf5; }
+    body { margin: 0; }
+    main { box-sizing: border-box; width: min(760px, 100%); margin: 0 auto; padding: 24px 20px 56px; }
+    img { display: block; width: 100%; max-height: 360px; object-fit: cover; border-radius: 10px; background: #eadfd8; }
+    h1 { margin: 24px 0 8px; color: #992d4d; line-height: 1.1; }
+    section { margin-top: 28px; }
+    h2 { margin: 0 0 10px; padding-bottom: 6px; border-bottom: 2px solid #cf9aac; font-size: 1rem; letter-spacing: .07em; text-transform: uppercase; }
+    ul, ol { margin: 0; padding-left: 1.4rem; }
+    li { margin: .55rem 0; line-height: 1.45; white-space: pre-wrap; }
+    #source { margin-top: 32px; color: #74656a; font-size: .8rem; overflow-wrap: anywhere; }
+    #problem { padding: 20px; border: 1px solid #d59aaa; border-radius: 10px; background: #fff; }
+    [hidden] { display: none !important; }
+    @media (prefers-color-scheme: dark) {
+      :root { color: #f4e9e5; background: #21181b; }
+      h1 { color: #ff9aba; }
+      h2 { border-color: #7d4a5b; }
+      #problem { background: #2d2025; }
+      #source { color: #c2b2b7; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p id="problem" hidden>This recipe link is missing or damaged.</p>
+    <article id="recipe" hidden>
+      <img id="image" alt="Recipe image" hidden>
+      <h1 id="title"></h1>
+      <section id="info-section"><h2>Info</h2><ul id="info"></ul></section>
+      <section id="ingredients-section"><h2>Ingredients</h2><ul id="ingredients"></ul></section>
+      <section id="instructions-section"><h2>Instructions</h2><ol id="instructions"></ol></section>
+      <section id="notes-section"><h2>Notes</h2><ul id="notes"></ul></section>
+      <p id="source"></p>
+    </article>
+  </main>
+  <script>
+    (() => {
+      const problem = document.getElementById('problem');
+      const recipe = document.getElementById('recipe');
+
+      function standardBase64(value) {
+        const converted = value.replace(/-/g, '+').replace(/_/g, '/');
+        return converted + '='.repeat((4 - converted.length % 4) % 4);
+      }
+
+      function decodeText(value) {
+        const binary = atob(standardBase64(value));
+        const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
+        return new TextDecoder().decode(bytes);
+      }
+
+      function renderLines(elementID, sectionID, text) {
+        const element = document.getElementById(elementID);
+        const lines = String(text || '')
+          .split(/\r?\n/)
+          .map(line => line.trim().replace(/^\s*(?:[-*•]\s+|\d+[.)]\s+)/, ''))
+          .filter(Boolean);
+        document.getElementById(sectionID).hidden = lines.length === 0;
+        for (const line of lines) {
+          const item = document.createElement('li');
+          item.textContent = line;
+          element.appendChild(item);
+        }
+      }
+
+      try {
+        const parts = location.hash.slice(1).split('.');
+        if (parts.length !== 3 || parts[0] !== '1' || !parts[1]) throw new Error('Invalid recipe link');
+
+        const data = JSON.parse(decodeText(parts[1]));
+        document.title = data.n || 'Shared Recipe';
+        document.getElementById('title').textContent = data.n || 'Untitled Recipe';
+        renderLines('info', 'info-section', data.f);
+        renderLines('ingredients', 'ingredients-section', data.i);
+        renderLines('instructions', 'instructions-section', data.d);
+        renderLines('notes', 'notes-section', data.o);
+        document.getElementById('source').textContent = `Source: ${data.s || 'unknown'}`;
+
+        if (parts[2]) {
+          const image = document.getElementById('image');
+          image.src = `data:image/jpeg;base64,${standardBase64(parts[2])}`;
+          image.hidden = false;
+        }
+
+        recipe.hidden = false;
+      } catch (error) {
+        problem.hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>
