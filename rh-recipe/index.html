@@ -47,7 +47,10 @@
       const setText = (id, value) => { document.getElementById(id).textContent = value || ''; };
 
       try {
-        const parts = location.hash.slice(1).split('.');
+        // Messages keeps query parameters attached to the tappable URL. The
+        // fragment fallback supports links from earlier experimental builds.
+        const payload = new URLSearchParams(location.search).get('recipe') || location.hash.slice(1);
+        const parts = payload.split('.');
         if (parts.length !== 3 || parts[0] !== '1') throw new Error('Unsupported recipe link');
         const metadata = JSON.parse(decodeText(parts[1]));
         setText('name', metadata.n);
