@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "R384SG98HQ.com.recipehog.app"
+        ],
+        "components": [
+          {
+            "/": "/rh-recipe*",
+            "comment": "Open Recipe Hog recipe links in the installed app."
+          }
+        ]
+      }
+    ]
+  }
+}
