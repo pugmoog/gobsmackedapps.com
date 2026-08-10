@@ -131,7 +131,7 @@ const apps = [
     {
         title: "Eye on the Sky",
         description: "An aircraft identification app using publicly available flight data.",
-        image: "placeholder-icon.png",
+        image: "eye-on-the-sky.png",
         status: "Coming soon"
     },
     {
