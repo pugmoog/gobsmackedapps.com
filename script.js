@@ -117,35 +117,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const apps = [
     {
+        id: "6794019754",
         title: "More-House",
         description: "An educational home-buying planning and financial estimate tool.",
         image: "more-house.png",
-        status: "Coming soon"
+        link: "https://apps.apple.com/app/id6794019754",
+        fallbackStatus: "COMING SOON"
     },
     {
+        id: "6794058831",
         title: "Red-Handed",
         description: "A truth detector app that you can use to play tricks on your kids.",
         image: "red-handed.png",
-        status: "Coming soon"
+        link: "https://apps.apple.com/app/id6794058831",
+        fallbackStatus: "GET"
     },
     {
+        id: "6800377075",
+        title: "MPRV",
+        description: "An app designed to bring people together.",
+        image: "mprv.png",
+        link: "https://apps.apple.com/app/id6800377075",
+        fallbackStatus: "COMING SOON"
+    },
+    {
+        id: "6794328086",
         title: "Eye on the Sky",
         description: "An aircraft identification app using publicly available flight data.",
         image: "eye-on-the-sky.png",
-        status: "Coming soon"
+        link: "https://apps.apple.com/app/id6794328086",
+        fallbackStatus: "COMING SOON"
     },
     {
+        id: "6798717648",
         title: "Recipe Hog",
         description: "An app to save, organize, and share all your favorite recipes.",
         image: "recipe-hog.png",
-        status: "Coming soon"
+        link: "https://apps.apple.com/app/id6798717648",
+        fallbackStatus: "COMING SOON"
     },
 ];
 
 const container = document.getElementById("apps-grid");
 
 if (container) container.innerHTML = apps.map(app => `
-    <article class="app-store-item">
+    <a class="app-store-item" href="${app.link}" target="_blank" rel="noopener noreferrer" aria-label="${app.title} on the App Store">
         <img src="${`../app-icons/${app.image}`}" class="app-icon" alt="${app.title} app icon">
         
         <div class="app-info">
@@ -153,6 +169,48 @@ if (container) container.innerHTML = apps.map(app => `
             <div class="app-description">${app.description}</div>
         </div>
 
-        <div class="app-status">${app.status}</div>
-    </article>
+        <div class="app-status${app.fallbackStatus === "GET" ? " is-available" : ""}" data-app-id="${app.id}" aria-live="polite">${app.fallbackStatus}</div>
+    </a>
 `).join("");
+
+function appStoreStatus(result) {
+    if (!result) return { label: "COMING SOON", available: false };
+
+    const isFree = Number(result.price) === 0 || result.formattedPrice === "Free";
+    return {
+        label: isFree ? "GET" : (result.formattedPrice || "GET"),
+        available: true
+    };
+}
+
+async function updateAppStoreStatuses() {
+    if (!container) return;
+
+    try {
+        const ids = apps.map(app => app.id).join(",");
+        const response = await fetch(`https://itunes.apple.com/lookup?country=us&id=${ids}`, {
+            cache: "no-store"
+        });
+
+        if (!response.ok) throw new Error("App Store lookup failed");
+
+        const data = await response.json();
+        const results = new Map(
+            (data.results || []).map(result => [String(result.trackId), result])
+        );
+
+        apps.forEach(app => {
+            const status = appStoreStatus(results.get(app.id));
+            const statusElement = container.querySelector(`[data-app-id="${app.id}"]`);
+            if (!statusElement) return;
+
+            statusElement.textContent = status.label;
+            statusElement.classList.toggle("is-available", status.available);
+        });
+    } catch (error) {
+        // Keep the known fallback labels if Apple's lookup is temporarily unavailable.
+        console.warn("Could not update App Store availability.", error);
+    }
+}
+
+updateAppStoreStatuses();
