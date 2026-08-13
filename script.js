@@ -1,66 +1,117 @@
-const apps = [
-    {
-        id: "6794019754",
-        title: "More-House",
-        description: "An educational home-buying planning and financial estimate tool.",
-        image: "more-house.png",
-        page: "./more-house/index.html",
-        appStoreLink: "https://apps.apple.com/app/id6794019754",
-        fallbackStatus: "COMING SOON"
-    },
-    {
-        id: "6794058831",
-        title: "Red~Handed",
-        description: "A truth detector app that you can use to play tricks on your kids.",
-        image: "red-handed.png",
-        page: "./red-handed/index.html",
-        appStoreLink: "https://apps.apple.com/app/id6794058831",
-        fallbackStatus: "GET"
-    },
-    {
-        id: "6800377075",
-        title: "MPRV",
-        description: "An app designed to bring people together.",
-        image: "mprv.png",
-        appStoreLink: "https://apps.apple.com/app/id6800377075",
-        fallbackStatus: "COMING SOON"
-    },
-    {
-        id: "6794328086",
-        title: "Eye on the Sky",
-        description: "An aircraft identification app using publicly available flight data.",
-        image: "eye-on-the-sky.png",
-        appStoreLink: "https://apps.apple.com/app/id6794328086",
-        fallbackStatus: "COMING SOON"
-    },
-    {
-        id: "6798717648",
-        title: "Recipe Hog",
-        description: "An app to save, organize, and share all your favorite recipes.",
-        image: "recipe-hog.png",
-        appStoreLink: "https://apps.apple.com/app/id6798717648",
-        fallbackStatus: "COMING SOON"
-    }
+const categoryOrder = [
+    "Simplify Hard Questions",
+    "Make Data Usable",
+    "Bring People Together"
 ];
 
-const container = document.getElementById("apps-grid");
+// Routes are presentation behavior; all app content lives in /api/about.json.
+const localAppPages = new Set(["more-house", "red-handed"]);
 
-if (container) {
-    container.innerHTML = apps.map(app => {
-        const href = app.page || app.appStoreLink;
-        const externalAttributes = app.page ? "" : ' target="_blank" rel="noopener noreferrer"';
+function appSlug(title) {
+    return title
+        .toLowerCase()
+        .replace(/~/g, "-")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+}
 
-        return `
-            <a class="app-store-item" href="${href}"${externalAttributes} aria-label="Learn more about ${app.title}">
-                <img src="${`../app-icons/${app.image}`}" class="app-icon" alt="${app.title} app icon">
-                <div class="app-info">
-                    <div class="app-name">${app.title}</div>
-                    <div class="app-description">${app.description}</div>
-                </div>
-                <span class="app-card-arrow" aria-hidden="true">→</span>
-            </a>
-        `;
-    }).join("");
+function localLogoUrl(logo) {
+    try {
+        const url = new URL(logo, window.location.href);
+        if (url.hostname === "gobsmackedapps.com" || url.hostname === "www.gobsmackedapps.com") {
+            return `..${url.pathname}`;
+        }
+    } catch (error) {
+        console.warn("Could not resolve app logo URL.", error);
+    }
+    return logo;
+}
+
+function createAppCard(app) {
+    const slug = appSlug(app.title);
+    const hasLocalPage = localAppPages.has(slug);
+    const card = document.createElement("a");
+    card.className = "app-store-item";
+    card.href = hasLocalPage ? `./${slug}/index.html` : app.link;
+    card.setAttribute("aria-label", hasLocalPage ? `Learn more about ${app.title}` : `View ${app.title} on the App Store`);
+
+    if (!hasLocalPage) {
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+    }
+
+    const icon = document.createElement("img");
+    icon.src = localLogoUrl(app.logo);
+    icon.className = "app-icon";
+    icon.alt = `${app.title} app icon`;
+
+    const info = document.createElement("div");
+    info.className = "app-info";
+
+    const name = document.createElement("div");
+    name.className = "app-name";
+    name.textContent = app.title;
+
+    const description = document.createElement("div");
+    description.className = "app-description";
+    description.textContent = app.description;
+
+    const arrow = document.createElement("span");
+    arrow.className = "app-card-arrow";
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "→";
+
+    info.append(name, description);
+    card.append(icon, info, arrow);
+    return card;
+}
+
+function renderAppCatalog(apps) {
+    const container = document.getElementById("apps-grid");
+    if (!container) return;
+
+    container.replaceChildren();
+
+    categoryOrder.forEach((category, index) => {
+        const categoryApps = apps.filter(app => app.category === category);
+        if (!categoryApps.length) return;
+
+        const section = document.createElement("section");
+        section.className = "app-category";
+        section.setAttribute("aria-labelledby", `app-category-${index}`);
+
+        const heading = document.createElement("h3");
+        heading.id = `app-category-${index}`;
+        heading.className = "app-category-title";
+        heading.textContent = category;
+
+        const grid = document.createElement("div");
+        grid.className = "apps-grid";
+        categoryApps.forEach(app => grid.append(createAppCard(app)));
+
+        section.append(heading, grid);
+        container.append(section);
+    });
+}
+
+async function loadAppCatalog() {
+    const container = document.getElementById("apps-grid");
+    if (!container) return;
+
+    try {
+        const response = await fetch("../api/about.json", { cache: "no-store" });
+        if (!response.ok) throw new Error("App catalog request failed");
+
+        const catalog = await response.json();
+        if (!Array.isArray(catalog.apps)) throw new Error("App catalog is missing its apps array");
+        renderAppCatalog(catalog.apps);
+    } catch (error) {
+        console.warn("Could not load the app catalog.", error);
+        const message = document.createElement("p");
+        message.className = "catalog-error";
+        message.textContent = "The app collection could not be loaded. Please refresh the page to try again.";
+        container.replaceChildren(message);
+    }
 }
 
 function appStoreStatus(result) {
@@ -98,4 +149,5 @@ async function updateAppDetailStatus() {
     }
 }
 
+loadAppCatalog();
 updateAppDetailStatus();

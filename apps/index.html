@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Explore mobile apps from Gobsmacked Apps.">
     <title>Our Apps | Gobsmacked Apps</title>
-    <link rel="stylesheet" href="../styles.css?v=20260813-5">
+    <link rel="stylesheet" href="../styles.css?v=20260813-6">
   </head>
   <body>
     <header class="site-header">
@@ -35,9 +35,12 @@
             <p class="eyebrow">THE COLLECTION</p>
             <h2 id="catalog-title">Made with purpose.</h2>
           </div>
-          <p>We’re constantly making new apps. Here are the ones currently in the works.</p>
+          <p>Explore the Gobsmacked Apps collection, organized by what each app helps you do.</p>
         </div>
-        <div class="apps-grid" id="apps-grid"></div>
+        <div class="app-category-list" id="apps-grid" aria-live="polite">
+          <p class="catalog-loading">Loading the collection…</p>
+        </div>
+        <noscript><p class="catalog-error">JavaScript is required to load the app collection.</p></noscript>
       </section>
 
       <section class="contact-strip page-shell">

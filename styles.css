@@ -246,6 +246,35 @@ a {
   gap: 20px;
 }
 
+.app-category-list {
+  display: grid;
+  gap: 52px;
+}
+
+.app-category-title {
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(22px, 2.7vw, 30px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.catalog-error {
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--muted);
+  background: var(--soft);
+}
+
+.catalog-loading {
+  margin: 0;
+  color: var(--muted);
+}
+
 .app-store-item {
   display: flex;
   align-items: center;
