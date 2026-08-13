@@ -54,7 +54,7 @@ a {
   align-items: center;
   justify-content: space-between;
   width: min(1120px, calc(100% - 48px));
-  min-height: 82px;
+  min-height: 96px;
   margin-inline: auto;
   gap: 32px;
 }
@@ -71,8 +71,8 @@ a {
 }
 
 .brand-logo {
-  width: 58px;
-  height: 58px;
+  width: 76px;
+  height: 76px;
   object-fit: contain;
 }
 
@@ -1225,7 +1225,7 @@ a {
   }
 
   .site-header-inner {
-    min-height: 70px;
+    min-height: 82px;
     gap: 12px;
   }
 
@@ -1235,8 +1235,8 @@ a {
   }
 
   .brand-logo {
-    width: 47px;
-    height: 47px;
+    width: 62px;
+    height: 62px;
   }
 
   .site-nav {
