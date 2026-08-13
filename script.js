@@ -4,16 +4,11 @@ const categoryOrder = [
     "Bring People Together"
 ];
 
-// Routes are presentation behavior; all app content lives in /api/about.json.
-const localAppPages = new Set(["more-house", "red-handed"]);
-
-function appSlug(title) {
-    return title
-        .toLowerCase()
-        .replace(/~/g, "-")
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "");
-}
+const categoryDescriptions = {
+    "Simplify Hard Questions": "We transform complicated topics into clear, intuitive experiences that anyone can understand. Valuable information shouldn’t require specialized knowledge to be useful.",
+    "Make Data Usable": "We turn data from APIs, calculations, and users into clear, actionable information. Data has the greatest value when it is easy to read and understand.",
+    "Bring People Together": "We create experiences that encourage conversation, connection, and shared moments—whether they solve a serious problem or simply spark laughter."
+};
 
 function localLogoUrl(logo) {
     try {
@@ -28,17 +23,10 @@ function localLogoUrl(logo) {
 }
 
 function createAppCard(app) {
-    const slug = appSlug(app.title);
-    const hasLocalPage = localAppPages.has(slug);
     const card = document.createElement("a");
     card.className = "app-store-item";
-    card.href = hasLocalPage ? `./${slug}/index.html` : app.link;
-    card.setAttribute("aria-label", hasLocalPage ? `Learn more about ${app.title}` : `View ${app.title} on the App Store`);
-
-    if (!hasLocalPage) {
-        card.target = "_blank";
-        card.rel = "noopener noreferrer";
-    }
+    card.href = app.link;
+    card.setAttribute("aria-label", `Learn more about ${app.title}`);
 
     const icon = document.createElement("img");
     icon.src = localLogoUrl(app.logo);
@@ -80,16 +68,24 @@ function renderAppCatalog(apps) {
         section.className = "app-category";
         section.setAttribute("aria-labelledby", `app-category-${index}`);
 
+        const header = document.createElement("div");
+        header.className = "app-category-heading";
+
         const heading = document.createElement("h3");
         heading.id = `app-category-${index}`;
         heading.className = "app-category-title";
         heading.textContent = category;
 
+        const description = document.createElement("p");
+        description.className = "app-category-description";
+        description.textContent = categoryDescriptions[category];
+
         const grid = document.createElement("div");
         grid.className = "apps-grid";
         categoryApps.forEach(app => grid.append(createAppCard(app)));
 
-        section.append(heading, grid);
+        header.append(heading, description);
+        section.append(header, grid);
         container.append(section);
     });
 }
