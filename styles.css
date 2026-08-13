@@ -811,8 +811,11 @@ a {
 
 .more-house-page .workflow-screen {
   display: block;
+  flex: 0 0 auto;
+  align-self: center;
   width: min(100%, 148px);
   height: auto;
+  aspect-ratio: auto;
   margin: 12px auto 0;
   border: 1px solid #d9dfda;
   border-radius: 20px;
@@ -823,6 +826,7 @@ a {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: auto;
   margin-top: 13px;
   border: 1px solid #dedede;
   border-radius: 9px;
@@ -833,7 +837,7 @@ a {
   position: relative;
 }
 
-.premium-marker {
+.more-house-page .has-premium > .premium-marker {
   position: absolute;
   z-index: 4;
   top: 0;
@@ -854,12 +858,12 @@ a {
   transform: translate(50%, -50%);
 }
 
-.premium-marker:focus {
+.more-house-page .has-premium > .premium-marker:focus {
   outline: 2px solid rgba(37, 185, 87, 0.35);
   outline-offset: 2px;
 }
 
-.premium-tooltip {
+.more-house-page .has-premium > .premium-marker .premium-tooltip {
   position: absolute;
   z-index: 10;
   bottom: calc(100% + 8px);
@@ -882,8 +886,8 @@ a {
   transition: opacity 0.16s, transform 0.16s;
 }
 
-.premium-marker:hover .premium-tooltip,
-.premium-marker:focus .premium-tooltip {
+.more-house-page .has-premium > .premium-marker:hover .premium-tooltip,
+.more-house-page .has-premium > .premium-marker:focus .premium-tooltip {
   opacity: 1;
   transform: translateY(0);
 }
