@@ -10,7 +10,7 @@ const apps = [
     },
     {
         id: "6794058831",
-        title: "Red-Handed",
+        title: "Red~Handed",
         description: "A truth detector app that you can use to play tricks on your kids.",
         image: "red-handed.png",
         page: "./red-handed/index.html",
