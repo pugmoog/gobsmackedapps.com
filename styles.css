@@ -19,7 +19,7 @@ body {
   color: var(--ink);
   background: #fff;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -54,7 +54,7 @@ a {
   align-items: center;
   justify-content: space-between;
   width: min(1120px, calc(100% - 48px));
-  min-height: 92px;
+  min-height: 82px;
   margin-inline: auto;
   gap: 32px;
 }
@@ -64,15 +64,15 @@ a {
   align-items: center;
   gap: 12px;
   color: #9a9a9a;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .brand-logo {
-  width: 66px;
-  height: 66px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
 }
 
@@ -109,15 +109,15 @@ a {
 
 .mission-hero,
 .page-hero {
-  padding-top: 100px;
-  padding-bottom: 66px;
+  padding-top: 90px;
+  padding-bottom: 58px;
 }
 
 .mission-hero h1,
 .page-hero h1 {
   max-width: 930px;
   margin: 0;
-  font-size: clamp(46px, 7vw, 78px);
+  font-size: clamp(42px, 6.3vw, 70px);
   font-weight: 400;
   letter-spacing: -0.035em;
   line-height: 1.04;
@@ -129,16 +129,16 @@ a {
 
 .hero-copy {
   max-width: 720px;
-  margin: 32px 0 0;
+  margin: 28px 0 0;
   color: #555;
-  font-size: clamp(20px, 2.5vw, 27px);
+  font-size: clamp(18px, 2.25vw, 24px);
   line-height: 1.45;
 }
 
 .mission-intro {
-  padding: 18px 0 88px;
+  padding: 16px 0 79px;
   border-bottom: 1px solid var(--line);
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.7;
 }
 
@@ -147,18 +147,18 @@ a {
 }
 
 .principles-section {
-  padding: 100px 0;
+  padding: 90px 0;
 }
 
 .section-heading {
   max-width: 720px;
-  margin-bottom: 46px;
+  margin-bottom: 41px;
 }
 
 .section-heading h2,
 .contact-strip h2 {
   margin: 0;
-  font-size: clamp(34px, 4.5vw, 50px);
+  font-size: clamp(31px, 4.05vw, 45px);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -171,8 +171,8 @@ a {
 }
 
 .principle-card {
-  min-height: 310px;
-  padding: 30px;
+  min-height: 280px;
+  padding: 27px;
   border: 1px solid var(--line);
   border-radius: 20px;
   background: var(--soft);
@@ -185,8 +185,8 @@ a {
 }
 
 .principle-card h3 {
-  margin: 42px 0 14px;
-  font-size: 25px;
+  margin: 38px 0 13px;
+  font-size: 23px;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -194,18 +194,18 @@ a {
 .principle-card p {
   margin: 0;
   color: #5f5f5f;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.65;
 }
 
 .mission-closing {
-  padding: 14px 0 120px;
+  padding: 13px 0 108px;
   text-align: center;
 }
 
 .mission-closing blockquote {
   margin: 0 0 34px;
-  font-size: clamp(25px, 3.5vw, 38px);
+  font-size: clamp(23px, 3.15vw, 34px);
   line-height: 1.45;
 }
 
@@ -222,7 +222,7 @@ a {
 }
 
 .catalog-section {
-  padding: 30px 0 110px;
+  padding: 27px 0 99px;
 }
 
 .catalog-heading {
@@ -249,9 +249,9 @@ a {
 .app-store-item {
   display: flex;
   align-items: center;
-  min-height: 136px;
-  gap: 18px;
-  padding: 24px;
+  min-height: 122px;
+  gap: 16px;
+  padding: 22px;
   border: 1px solid var(--line);
   border-radius: 20px;
   color: inherit;
@@ -267,8 +267,8 @@ a {
 }
 
 .app-icon {
-  width: 76px;
-  height: 76px;
+  width: 68px;
+  height: 68px;
   border-radius: 17px;
   flex-shrink: 0;
 }
@@ -279,7 +279,7 @@ a {
 }
 
 .app-name {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 650;
   line-height: 1.2;
 }
@@ -287,7 +287,7 @@ a {
 .app-description {
   margin-top: 7px;
   color: #707070;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.45;
 }
 
@@ -681,10 +681,10 @@ a {
 
 /* More-House uses a denser marketing layout so the full story is quick to scan. */
 .more-house-page .app-detail-hero {
-  grid-template-columns: 205px minmax(0, 1fr);
-  gap: clamp(35px, 6vw, 70px);
-  padding-top: 52px;
-  padding-bottom: 58px;
+  grid-template-columns: 165px minmax(0, 1fr);
+  gap: clamp(26px, 4.5vw, 50px);
+  padding-top: 36px;
+  padding-bottom: 42px;
 }
 
 .more-house-page .app-detail-icon {
@@ -692,36 +692,37 @@ a {
 }
 
 .more-house-page .app-detail-action {
-  min-height: 38px;
-  margin-top: 17px;
-  padding: 8px 15px;
-  font-size: 10px;
+  min-height: 34px;
+  margin-top: 12px;
+  padding: 7px 13px;
+  font-size: 9px;
 }
 
 .more-house-page .app-detail-note {
-  margin-top: 9px;
-  font-size: 11px;
+  margin-top: 7px;
+  font-size: 10px;
+  line-height: 1.4;
 }
 
 .more-house-page .app-detail-copy h1 {
-  font-size: clamp(43px, 6vw, 66px);
+  font-size: clamp(38px, 4.8vw, 54px);
 }
 
 .more-house-page .app-detail-copy h2 {
-  margin: 18px 0 16px;
-  font-size: clamp(26px, 3.4vw, 37px);
+  margin: 13px 0 11px;
+  font-size: clamp(22px, 2.8vw, 31px);
 }
 
 .more-house-page .app-detail-copy > p:not(.eyebrow) {
-  margin-bottom: 10px;
-  font-size: 16px;
-  line-height: 1.5;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .more-house-page .app-detail-copy .privacy-promise {
-  margin-top: 17px;
-  padding-top: 14px;
-  font-size: 13px;
+  margin-top: 12px;
+  padding-top: 10px;
+  font-size: 11px;
 }
 
 .more-house-page .app-gallery-section {
@@ -749,60 +750,130 @@ a {
 }
 
 .more-house-page .app-content-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 42px;
+  padding-bottom: 42px;
 }
 
 .more-house-page .app-content-section h2,
 .more-house-page .app-gallery-section h2,
 .more-house-page .app-final-cta h2 {
-  font-size: clamp(30px, 4vw, 42px);
+  font-size: clamp(25px, 3.2vw, 34px);
 }
 
 .more-house-page .section-heading {
-  margin-bottom: 28px;
+  margin-bottom: 21px;
 }
 
 .more-house-page .question-grid,
 .more-house-page .difference-grid {
-  gap: 14px;
+  gap: 12px;
 }
 
 .more-house-page .question-grid article,
 .more-house-page .difference-grid article {
-  padding: 20px;
-  border-radius: 15px;
+  padding: 15px;
+  border-radius: 13px;
 }
 
 .more-house-page .question-grid h3,
 .more-house-page .difference-grid h3 {
-  margin-bottom: 7px;
-  font-size: 19px;
+  margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .more-house-page .question-grid p,
 .more-house-page .difference-grid p {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.42;
 }
 
 .more-house-page .workflow-grid {
-  gap: 12px;
+  gap: 10px;
 }
 
 .more-house-page .workflow-grid li {
-  padding: 19px;
-  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  border-radius: 12px;
 }
 
 .more-house-page .workflow-grid h3 {
-  margin: 18px 0 7px;
-  font-size: 17px;
+  margin: 10px 0 4px;
+  font-size: 16px;
 }
 
 .more-house-page .workflow-grid p {
-  font-size: 13px;
-  line-height: 1.48;
+  min-height: 3.9em;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.more-house-page .workflow-screen {
+  display: block;
+  width: min(100%, 148px);
+  margin: 12px auto 0;
+  border: 1px solid #d9dfda;
+  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(18, 61, 30, 0.1);
+}
+
+.more-house-page .feature-screen {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-top: 13px;
+  border: 1px solid #dedede;
+  border-radius: 9px;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.premium-marker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 3px;
+  color: #25b957;
+  cursor: help;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.78em;
+  line-height: 1;
+  vertical-align: 0.08em;
+}
+
+.premium-marker:focus {
+  outline: 2px solid rgba(37, 185, 87, 0.35);
+  outline-offset: 2px;
+}
+
+.premium-tooltip {
+  position: absolute;
+  z-index: 10;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  width: max-content;
+  max-width: 190px;
+  padding: 7px 9px;
+  border-radius: 7px;
+  color: #fff;
+  background: #176f34;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  transform: translate(-50%, 4px);
+  transition: opacity 0.16s, transform 0.16s;
+}
+
+.premium-marker:hover .premium-tooltip,
+.premium-marker:focus .premium-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 .more-house-page .faq-section {
@@ -825,24 +896,24 @@ a {
 }
 
 .more-house-page .app-final-cta {
-  grid-template-columns: 72px minmax(0, 1fr) auto;
-  gap: 22px;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  gap: 17px;
   margin-top: 5px;
-  margin-bottom: 65px;
-  padding: 28px;
-  border-radius: 18px;
+  margin-bottom: 45px;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .more-house-page .app-final-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 17px;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
 }
 
 .more-house-page .app-final-cta p:not(.eyebrow) {
-  margin-top: 7px;
-  font-size: 14px;
-  line-height: 1.45;
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 1.38;
 }
 
 .contact-strip {
@@ -850,15 +921,15 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  margin-bottom: 110px;
-  padding: 48px;
-  border-radius: 24px;
+  margin-bottom: 99px;
+  padding: 43px;
+  border-radius: 22px;
   color: #fff;
   background: #111;
 }
 
 .contact-strip h2 {
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(25px, 3.6vw, 38px);
 }
 
 .contact-strip .eyebrow {
@@ -887,13 +958,13 @@ a {
 }
 
 .policy-hero {
-  padding: 92px 0 60px;
+  padding: 83px 0 54px;
   border-bottom: 1px solid var(--line);
 }
 
 .policy-hero h1 {
   margin: 0;
-  font-size: clamp(42px, 6vw, 66px);
+  font-size: clamp(38px, 5.4vw, 59px);
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.08;
@@ -908,25 +979,25 @@ a {
 .policy-content {
   width: min(850px, calc(100% - 48px));
   margin-inline: auto;
-  padding: 64px 0 110px;
+  padding: 58px 0 99px;
 }
 
 .policy-content > p:first-child {
   margin-top: 0;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .policy-content h2 {
-  margin: 64px 0 18px;
+  margin: 58px 0 16px;
   padding-top: 8px;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 400;
   line-height: 1.25;
 }
 
 .policy-content h3 {
-  margin: 28px 0 10px;
-  font-size: 21px;
+  margin: 25px 0 9px;
+  font-size: 19px;
   font-weight: 400;
 }
 
@@ -958,7 +1029,7 @@ a {
 .policy-content summary {
   padding: 18px 0;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -988,7 +1059,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 94px;
+  min-height: 85px;
   gap: 24px;
 }
 
@@ -1036,8 +1107,8 @@ a {
   }
 
   .more-house-page .app-detail-hero {
-    grid-template-columns: 180px minmax(0, 1fr);
-    gap: 32px;
+    grid-template-columns: 145px minmax(0, 1fr);
+    gap: 24px;
   }
 
   .workflow-grid {
@@ -1073,7 +1144,7 @@ a {
   }
 
   .site-header-inner {
-    min-height: 78px;
+    min-height: 70px;
     gap: 12px;
   }
 
@@ -1083,8 +1154,8 @@ a {
   }
 
   .brand-logo {
-    width: 52px;
-    height: 52px;
+    width: 47px;
+    height: 47px;
   }
 
   .site-nav {
@@ -1098,28 +1169,28 @@ a {
 
   .mission-hero,
   .page-hero {
-    padding-top: 68px;
-    padding-bottom: 50px;
+    padding-top: 61px;
+    padding-bottom: 45px;
   }
 
   .mission-intro {
-    padding-bottom: 68px;
-    font-size: 19px;
+    padding-bottom: 61px;
+    font-size: 17px;
   }
 
   .principles-section,
   .catalog-section {
-    padding: 74px 0;
+    padding: 67px 0;
   }
 
   .mission-closing {
-    padding-bottom: 82px;
+    padding-bottom: 74px;
   }
 
   .contact-strip {
     display: block;
-    margin-bottom: 74px;
-    padding: 30px;
+    margin-bottom: 67px;
+    padding: 27px;
   }
 
   .contact-button {
@@ -1128,15 +1199,15 @@ a {
 
   .app-store-item {
     display: grid;
-    grid-template-columns: 62px minmax(0, 1fr) auto;
+    grid-template-columns: 56px minmax(0, 1fr) auto;
     align-items: center;
-    column-gap: 16px;
-    padding: 18px;
+    column-gap: 14px;
+    padding: 16px;
   }
 
   .app-icon {
-    width: 62px;
-    height: 62px;
+    width: 56px;
+    height: 56px;
   }
 
   .app-detail-hero {
@@ -1147,10 +1218,10 @@ a {
   }
 
   .more-house-page .app-detail-hero {
-    grid-template-columns: 92px minmax(0, 1fr);
-    gap: 18px;
-    padding-top: 38px;
-    padding-bottom: 45px;
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 14px;
+    padding-top: 28px;
+    padding-bottom: 32px;
   }
 
   .app-detail-product {
@@ -1185,7 +1256,7 @@ a {
   }
 
   .more-house-page .app-detail-copy h1 {
-    font-size: 34px;
+    font-size: 29px;
   }
 
   .app-detail-copy h2 {
@@ -1196,8 +1267,8 @@ a {
   }
 
   .more-house-page .app-detail-copy h2 {
-    margin: 10px 0 13px;
-    font-size: 21px;
+    margin: 8px 0 10px;
+    font-size: 18px;
   }
 
   .app-detail-copy > p:not(.eyebrow) {
@@ -1221,8 +1292,8 @@ a {
 
   .more-house-page .app-content-section,
   .more-house-page .app-gallery-section {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 34px;
+    padding-bottom: 34px;
   }
 
   .question-grid,
@@ -1263,15 +1334,15 @@ a {
   }
 
   .policy-hero {
-    padding: 66px 0 44px;
+    padding: 59px 0 40px;
   }
 
   .policy-content {
-    padding: 48px 0 80px;
+    padding: 43px 0 72px;
   }
 
   .policy-content h2 {
-    margin-top: 50px;
+    margin-top: 45px;
   }
 
   .footer-inner {
