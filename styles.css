@@ -679,6 +679,172 @@ a {
   background: #fff;
 }
 
+/* More-House uses a denser marketing layout so the full story is quick to scan. */
+.more-house-page .app-detail-hero {
+  grid-template-columns: 205px minmax(0, 1fr);
+  gap: clamp(35px, 6vw, 70px);
+  padding-top: 52px;
+  padding-bottom: 58px;
+}
+
+.more-house-page .app-detail-icon {
+  border-radius: 22%;
+}
+
+.more-house-page .app-detail-action {
+  min-height: 38px;
+  margin-top: 17px;
+  padding: 8px 15px;
+  font-size: 10px;
+}
+
+.more-house-page .app-detail-note {
+  margin-top: 9px;
+  font-size: 11px;
+}
+
+.more-house-page .app-detail-copy h1 {
+  font-size: clamp(43px, 6vw, 66px);
+}
+
+.more-house-page .app-detail-copy h2 {
+  margin: 18px 0 16px;
+  font-size: clamp(26px, 3.4vw, 37px);
+}
+
+.more-house-page .app-detail-copy > p:not(.eyebrow) {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.more-house-page .app-detail-copy .privacy-promise {
+  margin-top: 17px;
+  padding-top: 14px;
+  font-size: 13px;
+}
+
+.more-house-page .app-gallery-section {
+  padding-top: 54px;
+  padding-bottom: 62px;
+  border-top: 1px solid var(--line);
+}
+
+.more-house-page .gallery-heading {
+  margin-bottom: 25px;
+}
+
+.more-house-page .app-gallery {
+  gap: 24px;
+  padding-bottom: 24px;
+}
+
+.more-house-page .gallery-phone {
+  flex-basis: min(230px, 68vw);
+}
+
+.more-house-page .gallery-phone figcaption {
+  bottom: -27px;
+  font-size: 11px;
+}
+
+.more-house-page .app-content-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.more-house-page .app-content-section h2,
+.more-house-page .app-gallery-section h2,
+.more-house-page .app-final-cta h2 {
+  font-size: clamp(30px, 4vw, 42px);
+}
+
+.more-house-page .section-heading {
+  margin-bottom: 28px;
+}
+
+.more-house-page .question-grid,
+.more-house-page .difference-grid {
+  gap: 14px;
+}
+
+.more-house-page .question-grid article,
+.more-house-page .difference-grid article {
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.more-house-page .question-grid h3,
+.more-house-page .difference-grid h3 {
+  margin-bottom: 7px;
+  font-size: 19px;
+}
+
+.more-house-page .question-grid p,
+.more-house-page .difference-grid p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.more-house-page .workflow-grid {
+  gap: 12px;
+}
+
+.more-house-page .workflow-grid li {
+  padding: 19px;
+  border-radius: 14px;
+}
+
+.more-house-page .workflow-grid h3 {
+  margin: 18px 0 7px;
+  font-size: 17px;
+}
+
+.more-house-page .workflow-grid p {
+  font-size: 13px;
+  line-height: 1.48;
+}
+
+.more-house-page .faq-section {
+  padding-top: 15px;
+}
+
+.more-house-page .faq-list {
+  margin-top: 24px;
+}
+
+.more-house-page .faq-list summary {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 16px;
+}
+
+.more-house-page .faq-list details p {
+  margin-bottom: 17px;
+  font-size: 14px;
+}
+
+.more-house-page .app-final-cta {
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  gap: 22px;
+  margin-top: 5px;
+  margin-bottom: 65px;
+  padding: 28px;
+  border-radius: 18px;
+}
+
+.more-house-page .app-final-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 17px;
+}
+
+.more-house-page .app-final-cta p:not(.eyebrow) {
+  margin-top: 7px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 .contact-strip {
   display: flex;
   align-items: center;
@@ -869,6 +1035,11 @@ a {
     gap: 44px;
   }
 
+  .more-house-page .app-detail-hero {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 32px;
+  }
+
   .workflow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -975,6 +1146,13 @@ a {
     padding-bottom: 72px;
   }
 
+  .more-house-page .app-detail-hero {
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 18px;
+    padding-top: 38px;
+    padding-bottom: 45px;
+  }
+
   .app-detail-product {
     grid-column: 1;
     grid-row: 1 / span 3;
@@ -1006,11 +1184,20 @@ a {
     font-size: 42px;
   }
 
+  .more-house-page .app-detail-copy h1 {
+    font-size: 34px;
+  }
+
   .app-detail-copy h2 {
     grid-column: 2;
     grid-row: 3;
     margin: 15px 0 17px;
     font-size: 25px;
+  }
+
+  .more-house-page .app-detail-copy h2 {
+    margin: 10px 0 13px;
+    font-size: 21px;
   }
 
   .app-detail-copy > p:not(.eyebrow) {
@@ -1030,6 +1217,12 @@ a {
   .app-gallery-section {
     padding-top: 72px;
     padding-bottom: 72px;
+  }
+
+  .more-house-page .app-content-section,
+  .more-house-page .app-gallery-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   .question-grid,
