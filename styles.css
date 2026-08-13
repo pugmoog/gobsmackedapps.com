@@ -812,6 +812,7 @@ a {
 .more-house-page .workflow-screen {
   display: block;
   width: min(100%, 148px);
+  height: auto;
   margin: 12px auto 0;
   border: 1px solid #d9dfda;
   border-radius: 20px;
@@ -821,26 +822,36 @@ a {
 .more-house-page .feature-screen {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
   margin-top: 13px;
   border: 1px solid #dedede;
   border-radius: 9px;
-  object-fit: cover;
-  object-position: top;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
 }
 
-.premium-marker {
+.more-house-page .has-premium {
   position: relative;
+}
+
+.premium-marker {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  right: 0;
   display: inline-flex;
   align-items: center;
-  margin-left: 3px;
-  color: #25b957;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #a8ddb7;
+  border-radius: 50%;
+  color: #176f34;
+  background: #dff5e5;
   cursor: help;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.78em;
+  font-size: 15px;
   line-height: 1;
-  vertical-align: 0.08em;
+  transform: translate(50%, -50%);
 }
 
 .premium-marker:focus {
@@ -852,7 +863,7 @@ a {
   position: absolute;
   z-index: 10;
   bottom: calc(100% + 8px);
-  left: 50%;
+  right: -7px;
   width: max-content;
   max-width: 190px;
   padding: 7px 9px;
@@ -862,18 +873,19 @@ a {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
   font-size: 11px;
   font-weight: 600;
+  letter-spacing: normal;
   line-height: 1.25;
   opacity: 0;
   pointer-events: none;
   text-align: center;
-  transform: translate(-50%, 4px);
+  transform: translateY(4px);
   transition: opacity 0.16s, transform 0.16s;
 }
 
 .premium-marker:hover .premium-tooltip,
 .premium-marker:focus .premium-tooltip {
   opacity: 1;
-  transform: translate(-50%, 0);
+  transform: translateY(0);
 }
 
 .more-house-page .faq-section {
