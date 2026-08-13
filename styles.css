@@ -932,6 +932,71 @@ a {
   line-height: 1.38;
 }
 
+/* Red-Handed shares the compact app-detail structure with its own evidence-board palette. */
+.red-handed-page {
+  --red-handed-navy: #061c36;
+  --red-handed-cream: #fbf7ef;
+  --red-handed-gold: #c79531;
+  --red-handed-red: #a23c35;
+}
+
+.red-handed-page .app-detail-copy h1,
+.red-handed-page .app-detail-copy h2 {
+  color: var(--red-handed-navy);
+}
+
+.red-handed-page .app-detail-action.is-available {
+  color: #fff;
+  background: var(--red-handed-red);
+}
+
+.red-handed-page .privacy-promise {
+  color: #76551c;
+  border-top-color: #eadfc8;
+}
+
+.red-handed-page .workflow-section {
+  background: var(--red-handed-cream);
+}
+
+.red-handed-page .workflow-grid li {
+  border-color: #e5d8be;
+}
+
+.red-handed-page .workflow-grid .step-number {
+  color: var(--red-handed-red);
+}
+
+.red-handed-page .workflow-screen,
+.red-handed-page .feature-screen {
+  width: min(100%, 148px);
+  height: auto;
+  aspect-ratio: auto;
+  margin-right: auto;
+  margin-left: auto;
+  border-color: #d8c8aa;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(6, 28, 54, 0.1);
+}
+
+.red-handed-page .difference-grid article {
+  border-color: #e6dfd2;
+  background: #faf8f3;
+}
+
+.red-handed-page .app-final-cta {
+  background: var(--red-handed-navy);
+}
+
+.red-handed-page .app-final-cta .eyebrow {
+  color: #d1ad63;
+}
+
+.red-handed-page .app-final-cta .app-detail-action {
+  color: var(--red-handed-navy);
+  background: #fff;
+}
+
 .contact-strip {
   display: flex;
   align-items: center;

@@ -13,6 +13,7 @@ const apps = [
         title: "Red-Handed",
         description: "A truth detector app that you can use to play tricks on your kids.",
         image: "red-handed.png",
+        page: "./red-handed/index.html",
         appStoreLink: "https://apps.apple.com/app/id6794058831",
         fallbackStatus: "GET"
     },
