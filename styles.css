@@ -221,60 +221,8 @@ a {
   text-decoration: underline;
 }
 
-.screens-wrapper {
-  width: 100%;
-  overflow: hidden;
-  padding: 8px 0 28px;
-}
-
-.screens {
-  --screen-gap: 20px;
-  position: relative;
-  width: 100%;
-  height: 620px;
-  overflow: hidden;
-}
-
-.phone-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 310px;
-  aspect-ratio: 1 / 2;
-  will-change: transform;
-}
-
-.phone-screen {
-  position: absolute;
-  z-index: 1;
-  top: 2.8%;
-  right: 7.1%;
-  bottom: 4.25%;
-  left: 8.1%;
-  overflow: hidden;
-  border-radius: 13% / 6%;
-  background: #000;
-}
-
-.app-screen {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.phone-frame {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
 .catalog-section {
-  padding: 96px 0 110px;
+  padding: 30px 0 110px;
 }
 
 .catalog-heading {
@@ -343,21 +291,392 @@ a {
   line-height: 1.45;
 }
 
-.app-status {
+.app-card-arrow {
   flex-shrink: 0;
-  padding: 7px 12px;
-  border-radius: 999px;
-  color: #686868;
-  background: #e9e9e9;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  color: #9a9a9a;
+  font-size: 24px;
+  line-height: 1;
+  transition: color 0.2s, transform 0.2s;
 }
 
-.app-status.is-available {
+.app-store-item:hover .app-card-arrow {
+  color: var(--blue);
+  transform: translateX(3px);
+}
+
+.app-detail-hero {
+  display: grid;
+  grid-template-columns: minmax(220px, 310px) minmax(0, 1fr);
+  gap: clamp(48px, 8vw, 100px);
+  padding-top: 96px;
+  padding-bottom: 105px;
+}
+
+.app-detail-product {
+  align-self: start;
+}
+
+.app-detail-icon {
+  display: block;
+  width: 100%;
+  border-radius: 24%;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.14);
+}
+
+.app-detail-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 24px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: #555;
+  background: #e9e9e9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.045em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.app-detail-action.is-available {
   color: #fff;
   background: var(--blue);
+}
+
+.app-detail-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.app-detail-copy h1 {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(50px, 7vw, 82px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.app-detail-copy h2 {
+  max-width: 690px;
+  margin: 28px 0 26px;
+  font-size: clamp(29px, 3.7vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.17;
+}
+
+.app-detail-copy > p:not(.eyebrow) {
+  max-width: 710px;
+  margin: 0 0 16px;
+  color: #4f4f4f;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.app-detail-copy .privacy-promise {
+  margin-top: 27px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: #277b42;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.app-content-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.app-content-section h2,
+.app-gallery-section h2,
+.app-final-cta h2 {
+  margin: 0;
+  font-size: clamp(35px, 4.6vw, 52px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.13;
+}
+
+.app-content-intro {
+  border-top: 1px solid var(--line);
+}
+
+.question-grid,
+.difference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.question-grid article,
+.difference-grid article {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--soft);
+}
+
+.question-grid h3,
+.difference-grid h3,
+.feature-panel h3 {
+  margin: 0 0 12px;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.question-grid p,
+.difference-grid p {
+  margin: 0;
+  color: #5d5d5d;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.workflow-section,
+.scenario-section {
+  background: #f6fbf7;
+}
+
+.section-heading > p:last-child {
+  color: #5f5f5f;
+  font-size: 18px;
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.workflow-grid li {
+  margin: 0;
+  padding: 27px;
+  border: 1px solid #dcebe0;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.workflow-grid span {
+  color: #26b957;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.workflow-grid h3 {
+  margin: 32px 0 12px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.workflow-grid p {
+  margin: 0;
+  color: #626262;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.app-gallery-section {
+  padding-top: 108px;
+  padding-bottom: 115px;
+}
+
+.gallery-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 45px;
+}
+
+.gallery-heading > p {
+  max-width: 360px;
+  margin: 0 0 5px;
+  color: var(--muted);
+}
+
+.app-gallery {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 10px 4px 28px;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: #c9c9c9 transparent;
+}
+
+.gallery-phone {
+  position: relative;
+  flex: 0 0 min(310px, 78vw);
+  aspect-ratio: 1 / 2;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.gallery-phone-screen {
+  position: absolute;
+  z-index: 1;
+  top: 2.8%;
+  right: 7.1%;
+  bottom: 4.25%;
+  left: 8.1%;
+  overflow: hidden;
+  border-radius: 13% / 6%;
+  background: #000;
+}
+
+.gallery-phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-phone-frame {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.gallery-phone figcaption {
+  position: absolute;
+  z-index: 3;
+  bottom: -34px;
+  left: 0;
+  width: 100%;
+  color: #666;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.scenario-layout,
+.feature-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(50px, 8vw, 110px);
+}
+
+.scenario-layout > div > p:last-child,
+.feature-split > div > p {
+  color: #5e5e5e;
+  font-size: 18px;
+}
+
+.scenario-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scenario-list li {
+  margin: 0;
+  padding: 16px 19px;
+  border: 1px solid #dcebe0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.feature-panel {
+  padding: 32px;
+  border-radius: 20px;
+  color: #fff;
+  background: #16251a;
+}
+
+.feature-panel ul {
+  margin: 22px 0 0;
+  padding-left: 21px;
+}
+
+.feature-panel li {
+  margin: 10px 0;
+}
+
+.difference-section {
+  border-top: 1px solid var(--line);
+}
+
+.faq-section {
+  padding-top: 30px;
+}
+
+.faq-list {
+  margin-top: 38px;
+  border-top: 1px solid var(--line);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-list summary {
+  padding: 22px 38px 22px 0;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.faq-list details p {
+  max-width: 800px;
+  margin: -4px 0 24px;
+  color: #5c5c5c;
+}
+
+.app-final-cta {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 110px;
+  padding: 42px;
+  border-radius: 24px;
+  color: #fff;
+  background: #16251a;
+}
+
+.app-final-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 23px;
+}
+
+.app-final-cta .eyebrow {
+  color: #94b99e;
+}
+
+.app-final-cta h2 {
+  font-size: clamp(29px, 3.8vw, 42px);
+}
+
+.app-final-cta p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 12px 0 0;
+  color: #c6d4c9;
+}
+
+.app-final-cta .app-detail-action {
+  margin: 0;
+  color: #11351c;
+  background: #fff;
 }
 
 .contact-strip {
@@ -544,6 +863,34 @@ a {
   .apps-grid {
     grid-template-columns: 1fr;
   }
+
+  .app-detail-hero {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 44px;
+  }
+
+  .workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scenario-layout,
+  .feature-split {
+    grid-template-columns: 1fr;
+  }
+
+  .app-final-cta {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .app-final-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .app-final-cta .app-detail-action {
+    grid-column: 2;
+    justify-self: start;
+  }
 }
 
 @media (max-width: 620px) {
@@ -598,10 +945,6 @@ a {
     padding-bottom: 82px;
   }
 
-  .screens {
-    height: 620px;
-  }
-
   .contact-strip {
     display: block;
     margin-bottom: 74px;
@@ -614,10 +957,9 @@ a {
 
   .app-store-item {
     display: grid;
-    grid-template-columns: 62px minmax(0, 1fr);
-    align-items: flex-start;
+    grid-template-columns: 62px minmax(0, 1fr) auto;
+    align-items: center;
     column-gap: 16px;
-    row-gap: 12px;
     padding: 18px;
   }
 
@@ -626,9 +968,105 @@ a {
     height: 62px;
   }
 
-  .app-status {
+  .app-detail-hero {
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 22px;
+    padding-top: 58px;
+    padding-bottom: 72px;
+  }
+
+  .app-detail-product {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+  }
+
+  .app-detail-copy {
+    display: contents;
+  }
+
+  .app-detail-icon {
+    border-radius: 27px;
+  }
+
+  .app-detail-product .app-detail-action {
+    width: 100%;
+    min-height: 36px;
+    margin-top: 14px;
+    padding: 8px 5px;
+    font-size: 9px;
+  }
+
+  .app-detail-note {
+    display: none;
+  }
+
+  .app-detail-copy h1 {
     grid-column: 2;
-    justify-self: start;
+    grid-row: 2;
+    font-size: 42px;
+  }
+
+  .app-detail-copy h2 {
+    grid-column: 2;
+    grid-row: 3;
+    margin: 15px 0 17px;
+    font-size: 25px;
+  }
+
+  .app-detail-copy > p:not(.eyebrow) {
+    grid-column: 1 / -1;
+    font-size: 16px;
+  }
+
+  .app-detail-copy .eyebrow {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    margin-bottom: 8px;
+    font-size: 9px;
+  }
+
+  .app-content-section,
+  .app-gallery-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .question-grid,
+  .difference-grid,
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-heading {
+    display: block;
+  }
+
+  .gallery-heading > p {
+    margin-top: 16px;
+  }
+
+  .app-gallery {
+    margin-right: -16px;
+  }
+
+  .app-final-cta {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 20px;
+    margin-bottom: 74px;
+    padding: 27px;
+  }
+
+  .app-final-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 15px;
+  }
+
+  .app-final-cta .app-detail-action {
+    grid-column: 1 / -1;
+    justify-self: stretch;
   }
 
   .policy-hero {
