@@ -761,7 +761,13 @@ a {
 }
 
 .more-house-page .section-heading {
+  max-width: none;
   margin-bottom: 21px;
+}
+
+.more-house-page .section-nowrap {
+  max-width: none;
+  white-space: nowrap;
 }
 
 .more-house-page .question-grid,
@@ -930,6 +936,11 @@ a {
   margin-top: 5px;
   font-size: 12px;
   line-height: 1.38;
+}
+
+.more-house-page .app-final-cta .cta-nowrap {
+  max-width: none;
+  white-space: nowrap;
 }
 
 /* Red-Handed shares the compact app-detail structure with its own evidence-board palette. */
@@ -1190,6 +1201,11 @@ a {
   .more-house-page .app-detail-hero {
     grid-template-columns: 145px minmax(0, 1fr);
     gap: 24px;
+  }
+
+  .more-house-page .section-nowrap,
+  .more-house-page .app-final-cta .cta-nowrap {
+    white-space: normal;
   }
 
   .workflow-grid {
