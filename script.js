@@ -14,7 +14,7 @@ function localLogoUrl(logo) {
     try {
         const url = new URL(logo, window.location.href);
         if (url.hostname === "gobsmackedapps.com" || url.hostname === "www.gobsmackedapps.com") {
-            return `..${url.pathname}`;
+            return `..${url.pathname}${url.search}`;
         }
     } catch (error) {
         console.warn("Could not resolve app logo URL.", error);

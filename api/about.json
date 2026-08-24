@@ -3,7 +3,7 @@
   "apps": [
     {
       "title": "More-House",
-      "description": "An educational home-buying planning and financial estimate tool.",
+      "description": "Understand the financial impacts and benefits of going from renter to owner.",
       "logo": "https://gobsmackedapps.com/app-icons/more-house.png",
       "link": "https://gobsmackedapps.com/apps/more-house/",
       "category": "Simplify Hard Questions"
@@ -24,8 +24,8 @@
     },
     {
       "title": "Eye on the Sky",
-      "description": "An aircraft identification app using publicly available flight data.",
-      "logo": "https://gobsmackedapps.com/app-icons/eye-on-the-sky.png",
+      "description": "Identify any aircraft instantly and track past sightings across the globe.",
+      "logo": "https://gobsmackedapps.com/app-icons/eye-on-the-sky.png?v=20260824",
       "link": "https://gobsmackedapps.com/apps/eye-on-the-sky/",
       "category": "Make Data Usable"
     },
