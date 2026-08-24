@@ -6,7 +6,7 @@ const categoryOrder = [
 
 const categoryDescriptions = {
     "Simplify Hard Questions": "We transform complicated topics into clear, intuitive experiences that anyone can understand. Valuable information shouldn’t require specialized knowledge to be useful.",
-    "Make Data Usable": "We turn data from APIs, calculations, and users into clear, actionable information. Data has the greatest value when it is easy to read and understand.",
+    "Make Data Usable": "Turn publicly available or crowdsourced data into useful or fun tools to highlight the data source and its value to the average person. Data has the greatest value when it’s accessed and used.",
     "Bring People Together": "We create experiences that encourage conversation, connection, and shared moments—whether they solve a serious problem or simply spark laughter."
 };
 
