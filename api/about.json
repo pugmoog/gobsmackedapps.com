@@ -16,13 +16,6 @@
       "category": "Bring People Together"
     },
     {
-      "title": "MPRV",
-      "description": "An app designed to bring people together.",
-      "logo": "https://gobsmackedapps.com/app-icons/mprv.png",
-      "link": "https://gobsmackedapps.com/apps/mprv/",
-      "category": "Bring People Together"
-    },
-    {
       "title": "Eye on the Sky",
       "description": "Identify any aircraft instantly and track past sightings across the globe.",
       "logo": "https://gobsmackedapps.com/app-icons/eye-on-the-sky.png?v=20260824",
@@ -32,7 +25,7 @@
     {
       "title": "Recipe Hog",
       "description": "An app to save, organize, and share all your favorite recipes.",
-      "logo": "https://gobsmackedapps.com/app-icons/recipe-hog.png",
+      "logo": "https://gobsmackedapps.com/app-icons/recipe-hog.png?v=20260829",
       "link": "https://gobsmackedapps.com/apps/recipe-hog/",
       "category": "Make Data Usable"
     }
