@@ -843,6 +843,13 @@ a {
   line-height: 1.42;
 }
 
+.app-showcase-page .app-tier-note {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 .app-showcase-page .workflow-grid {
   gap: 10px;
 }
@@ -876,6 +883,10 @@ a {
   border: 1px solid #d9dfda;
   border-radius: 20px;
   box-shadow: 0 10px 24px rgba(18, 61, 30, 0.1);
+}
+
+.app-showcase-page .workflow-screen-wide {
+  width: min(100%, 222px);
 }
 
 .app-showcase-page .feature-screen {
