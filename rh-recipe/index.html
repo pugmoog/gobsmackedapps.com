@@ -37,7 +37,106 @@
   <p id="error" class="error" hidden>This recipe link is invalid or incomplete.</p>
 
   <script>
-    (() => {
+    (async () => {
+      const decodeBase16384 = (value) => {
+        if (!/^[0-9a-d]/.test(value) || value.length > 500001) throw new Error('Invalid payload');
+        const padding = parseInt(value[0], 16);
+        const totalBits = (value.length - 1) * 14 - padding;
+        if (totalBits < 0 || totalBits % 8 || (value.length === 1 && padding)) throw new Error('Invalid length');
+        const bytes = [];
+        let buffer = 0, bits = 0;
+        for (let i = 1; i < value.length; i++) {
+          const symbol = value.charCodeAt(i) - 0x4E00;
+          if (symbol < 0 || symbol >= 16384) throw new Error('Invalid symbol');
+          const last = i === value.length - 1;
+          if (last && (symbol & ((1 << padding) - 1))) throw new Error('Invalid padding');
+          const width = last ? 14 - padding : 14;
+          buffer = (buffer << width) | (last ? symbol >> padding : symbol);
+          bits += width;
+          while (bits >= 8) {
+            bits -= 8;
+            bytes.push(buffer >> bits);
+            buffer &= (1 << bits) - 1;
+          }
+        }
+        return Uint8Array.from(bytes);
+      };
+      const decodeBase32768 = (value) => {
+        if (!/^[0-9a-e]/.test(value) || value.length > 500001) throw new Error('Invalid payload');
+        const padding = parseInt(value[0], 16);
+        const totalBits = (value.length - 1) * 15 - padding;
+        if (totalBits < 0 || totalBits % 8 || (value.length === 1 && padding)) throw new Error('Invalid length');
+        const bytes = [];
+        let buffer = 0, bits = 0;
+        for (let i = 1; i < value.length; i++) {
+          const code = value.charCodeAt(i);
+          const symbol = code >= 0x3400 && code <= 0x9FFF ? code - 0x3400
+            : code >= 0xAC00 && code <= 0xBFFF ? code - 0xAC00 + 0x6C00 : -1;
+          if (symbol < 0 || symbol >= 32768) throw new Error('Invalid symbol');
+          const last = i === value.length - 1;
+          if (last && (symbol & ((1 << padding) - 1))) throw new Error('Invalid padding');
+          const width = last ? 15 - padding : 15;
+          buffer = (buffer << width) | (last ? symbol >> padding : symbol);
+          bits += width;
+          while (bits >= 8) {
+            bits -= 8;
+            bytes.push(buffer >> bits);
+            buffer &= (1 << bits) - 1;
+          }
+        }
+        return Uint8Array.from(bytes);
+      };
+      // qntm/base32768, MIT. See BASE32768-LICENSE.txt.
+      const stableSymbols = new Map();
+      ['ҠҿԀԟڀڿݠޟ߀ߟကဟႠႿᄀᅟᆀᆟᇠሿበቿዠዿጠጿᎠᏟᐠᙟᚠᛟកសᠠᡟᣀᣟᦀᦟ᧠᧿ᨠᨿᯀᯟᰀᰟᴀᴟ⇠⇿⋀⋟⍀⏟␀␟─❟➀➿⠀⥿⦠⦿⨠⩟⪀⪿⫠⭟ⰀⰟⲀⳟⴀⴟⵀⵟ⺠⻟㇀㇟㐀䶟䷀龿ꀀꑿ꒠꒿ꔀꗿꙀꙟꚠꛟ꜀ꝟꞀꞟꡀꡟ', 'ƀƟɀʟ'].forEach((pairs, repertoire) => {
+        let value = 0;
+        for (let i = 0; i < pairs.length; i += 2) {
+          for (let code = pairs.charCodeAt(i); code <= pairs.charCodeAt(i + 1); code++) {
+            stableSymbols.set(code, [repertoire === 0 ? 15 : 7, value++]);
+          }
+        }
+      });
+      const decodeStableBase32768 = (text) => {
+        if (text.length > 502000) throw new Error('Payload too large');
+        const value = text.replace(/-/g, '');
+        if (value.length > 500000) throw new Error('Payload too large');
+        const bytes = [];
+        let buffer = 0, bits = 0;
+        for (let i = 0; i < value.length; i++) {
+          const symbol = stableSymbols.get(value.charCodeAt(i));
+          if (!symbol || (symbol[0] !== 15 && i !== value.length - 1)) throw new Error('Invalid symbol');
+          buffer = (buffer << symbol[0]) | symbol[1];
+          bits += symbol[0];
+          while (bits >= 8) {
+            bits -= 8;
+            bytes.push(buffer >> bits);
+            buffer &= (1 << bits) - 1;
+          }
+        }
+        if (buffer !== (1 << bits) - 1) throw new Error('Invalid padding');
+        return Uint8Array.from(bytes);
+      };
+      const inflateRaw = async (bytes) => {
+        const reader = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw')).getReader();
+        const chunks = [];
+        let size = 0;
+        try {
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            size += value.length;
+            if (size > 1048576) {
+              await reader.cancel();
+              throw new Error('Recipe is too large');
+            }
+            chunks.push(value);
+          }
+        } finally { reader.releaseLock(); }
+        const output = new Uint8Array(size);
+        let offset = 0;
+        for (const chunk of chunks) { output.set(chunk, offset); offset += chunk.length; }
+        return output;
+      };
       const decodeBase64URL = (value) => {
         const base64 = value.replace(/-/g, '+').replace(/_/g, '/')
           + '='.repeat((4 - value.length % 4) % 4);
@@ -47,10 +146,28 @@
       const setText = (id, value) => { document.getElementById(id).textContent = value || ''; };
 
       try {
-        const fragment = location.hash.slice(1);
+        const fragment = decodeURIComponent(location.hash.slice(1));
         let metadata;
         let imageBytes;
-        if (fragment && !fragment.includes('.')) {
+        if (fragment.startsWith('6.')) {
+          if (fragment.length > 1500000) throw new Error('Payload too large');
+          const payload = fragment.slice(2).replace(/-/g, '');
+          if (!/^[A-Za-z0-9+/]*$/.test(payload)) throw new Error('Invalid Base64 payload');
+          const bytes = await inflateRaw(decodeBase64URL(payload));
+          metadata = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+          if (metadata.v !== 2) throw new Error('Unsupported recipe link');
+        } else if (fragment.startsWith('5.')) {
+          const bytes = await inflateRaw(decodeStableBase32768(fragment.slice(2)));
+          metadata = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+          if (metadata.v !== 2) throw new Error('Unsupported recipe link');
+        } else if (fragment.startsWith('4.')) {
+          const bytes = await inflateRaw(decodeBase32768(fragment.slice(2)));
+          metadata = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+          if (metadata.v !== 2) throw new Error('Unsupported recipe link');
+        } else if (fragment.startsWith('3.')) {
+          metadata = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(decodeBase16384(fragment.slice(2))));
+          if (metadata.v !== 2) throw new Error('Unsupported recipe link');
+        } else if (fragment && !fragment.includes('.')) {
           metadata = JSON.parse(decodeText(fragment));
           if (metadata.v !== 2) throw new Error('Unsupported recipe link');
         } else {
