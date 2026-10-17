@@ -1,0 +1,59 @@
+.cake-dates-page { --soft: #f8f7f2; --line: #dfddd4; }
+.cake-dates-page .app-detail-hero {
+  grid-template-columns: 150px minmax(0, 1fr) 230px;
+  gap: 36px;
+  align-items: start;
+  padding-block: 48px 60px;
+}
+.cake-dates-page .app-detail-icon { height: auto; box-shadow: none; border-radius: 0; }
+.cake-dates-page .app-detail-copy h2 { font-size: clamp(26px, 3vw, 38px); }
+.cake-dates-page .app-detail-copy > p:not(.eyebrow) { font-size: 16px; line-height: 1.6; }
+.cake-dates-page .app-detail-copy > p + p { margin-top: 22px; }
+.cake-hero-shot { margin: 0; }
+.cake-hero-shot img, .cake-dates-page .workflow-screen, .cake-ipad-shot {
+  display: block;
+  height: auto;
+  border: 3px solid #262520;
+  border-radius: 27px;
+  box-shadow: 0 0 0 2px #dfddd4;
+}
+.cake-hero-shot img { width: 100%; }
+.cake-intro, .cake-dates-page .workflow-section { background: var(--soft); }
+.cake-intro-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+.cake-intro-grid h2 { margin: 0; }
+.cake-intro-grid > p { font-size: 20px; line-height: 1.5; }
+.cake-dates-page .workflow-grid li { background: white; border-color: var(--line); padding: 18px; }
+.cake-dates-page .workflow-grid p { font-size: 14px; line-height: 1.5; min-height: 9em; }
+.cake-dates-page .workflow-screen { width: min(100%, 200px); margin-top: auto; }
+.cake-caption { color: #66665e; font-size: 12px; margin: 24px 0 0; }
+.cake-ipad-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 44px; align-items: center; }
+.cake-ipad-shot { width: 100%; border-radius: 24px; }
+.cake-features h3 { margin: 0 0 8px; font-size: 22px; line-height: 1.3; font-weight: 400; }
+.cake-features p { margin: 0; font-size: 16px; line-height: 1.5; }
+.cake-features article { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+.cake-dates-page .app-final-cta { background: var(--soft); }
+@media (max-width: 1000px) {
+  .cake-dates-page .app-detail-hero { grid-template-columns: 120px minmax(0, 1fr) 180px; gap: 24px; }
+  .cake-dates-page .workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .cake-dates-page .workflow-grid p { min-height: 6em; }
+  .cake-ipad-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .cake-dates-page .app-detail-hero { grid-template-columns: 90px minmax(0, 1fr); gap: 20px; padding-block: 28px 40px; }
+  .cake-dates-page .app-detail-product { grid-column: 1; grid-row: 1; }
+  .cake-dates-page .app-detail-copy { display: block; grid-column: 2; }
+  .cake-dates-page .app-detail-copy h1 { font-size: clamp(28px, 7vw, 42px); }
+  .cake-dates-page .app-detail-copy h2 { font-size: 25px; }
+  .cake-dates-page .app-detail-copy > p:not(.eyebrow) { font-size: 15px; }
+  .cake-hero-shot { grid-column: 1 / -1; width: 210px; margin: 16px auto 0; }
+  .cake-intro-grid { grid-template-columns: 1fr; gap: 12px; }
+  .cake-intro-grid > p { font-size: 18px; margin: 0; }
+  .cake-dates-page .workflow-grid { grid-template-columns: 1fr; }
+  .cake-dates-page .workflow-grid p { min-height: 0; margin-bottom: 22px; }
+  .cake-dates-page .workflow-screen { width: 220px; }
+}
+.cake-dates-page .app-final-cta h2 { color: var(--ink); }
+.cake-dates-page .app-final-cta p:not(.eyebrow) { color: #56564f; }
+.cake-dates-page .app-final-cta .app-detail-action { color: white; background: var(--blue); }
+.cake-dates-page .workflow-grid .step-number { color: #73736b; }
+.cake-dates-page .app-detail-note { display: block; }

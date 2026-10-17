@@ -28,6 +28,13 @@
       "logo": "https://gobsmackedapps.com/app-icons/recipe-hog.png?v=20260829",
       "link": "https://gobsmackedapps.com/apps/recipe-hog/",
       "category": "Make Data Usable"
+    },
+    {
+      "title": "CakeDates",
+      "description": "Remember birthdays, anniversaries, and important dates. Bring them together, share with family, and make room for cake.",
+      "logo": "https://gobsmackedapps.com/app-icons/cake-dates.png",
+      "link": "https://gobsmackedapps.com/apps/cake-dates/",
+      "category": "Bring People Together"
     }
   ]
 }
