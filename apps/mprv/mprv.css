@@ -1,0 +1,79 @@
+.mprv-page { --soft: #f8f7f2; --line: #dfddd4; }
+.mprv-page .app-detail-hero {
+  grid-template-columns: 150px minmax(0, 1fr) 230px;
+  gap: 36px;
+  align-items: start;
+  padding-block: 48px 60px;
+}
+.mprv-page .app-detail-icon { height: auto; box-shadow: none; border-radius: 0; }
+.mprv-page .app-detail-copy h1 { font-size: clamp(32px, 4.2vw, 52px); }
+.mprv-page .app-detail-copy h2 { font-size: clamp(26px, 3vw, 38px); }
+.mprv-page .app-detail-copy > p:not(.eyebrow) { font-size: 17px; line-height: 1.6; }
+.mprv-page .app-detail-copy > p + p { margin-top: 28px; }
+.mprv-page .app-detail-copy .mprv-tagline { color: #73736b; }
+.mprv-page .app-detail-note { display: block; }
+.mprv-page .mprv-coming-soon { color: white; background: var(--blue); cursor: default; }
+.mprv-hero-shot { margin: 0; }
+.mprv-hero-shot img, .mprv-page .workflow-screen, .mprv-ipad-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid #262520;
+  border-radius: 27px;
+  box-shadow: 0 0 0 2px #dfddd4;
+}
+.mprv-page .workflow-section { background: var(--soft); }
+.mprv-page .workflow-grid li { background: white; border-color: var(--line); padding: 18px; }
+.mprv-page .workflow-grid .step-number { color: #73736b; }
+.mprv-page .workflow-grid p { font-size: 14px; line-height: 1.5; min-height: 9em; }
+.mprv-page .workflow-screen { width: min(100%, 200px); margin-top: auto; }
+.mprv-caption { color: #66665e; font-size: 12px; margin: 24px 0 0; }
+.mprv-ipad-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
+.mprv-ipad-grid figure { margin: 0; }
+.mprv-ipad-grid figcaption { margin-bottom: 18px; }
+.mprv-ipad-grid img { border-radius: 24px; }
+.mprv-ipad-copy { text-align: center; margin-top: 24px; }
+.mprv-ipad-copy > p:first-child { font-size: 23px; margin-bottom: 6px; }
+.mprv-ipad-copy > p + p { color: #73736b; margin: 8px 0; }
+.mprv-page .app-final-cta { background: var(--soft); }
+.mprv-page .app-final-cta h2 { color: var(--ink); }
+.mprv-page .app-final-cta p:not(.eyebrow) { color: #56564f; }
+@media (max-width: 1000px) {
+  .mprv-page .app-detail-hero { grid-template-columns: 120px minmax(0, 1fr) 180px; gap: 24px; }
+  .mprv-page .workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .mprv-page .workflow-grid p { min-height: 6em; }
+}
+@media (max-width: 700px) {
+  .mprv-page .app-detail-hero { grid-template-columns: 90px minmax(0, 1fr); gap: 20px; padding-block: 28px 40px; }
+  .mprv-page .app-detail-product { grid-column: 1; grid-row: 1; }
+  .mprv-page .app-detail-copy { display: block; grid-column: 2; }
+  .mprv-page .app-detail-copy h1 { font-size: clamp(26px, 7vw, 42px); }
+  .mprv-page .app-detail-copy h2 { font-size: 25px; }
+  .mprv-page .app-detail-copy > p:not(.eyebrow) { font-size: 15px; }
+  .mprv-hero-shot { grid-column: 1 / -1; width: 210px; margin: 16px auto 0; }
+  .mprv-page .workflow-grid, .mprv-ipad-grid { grid-template-columns: 1fr; }
+  .mprv-page .workflow-grid p { min-height: 0; margin-bottom: 22px; }
+  .mprv-page .workflow-screen { width: 220px; }
+}
+
+.mprv-page .eyebrow { color: #456328; }
+.mprv-page .mprv-coming-soon { background: #292e23; }
+.mprv-intro { background: var(--soft); }
+.mprv-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.mprv-intro-grid h2 { margin: 0; }
+.mprv-intro-grid > p { font-size: 21px; line-height: 1.5; }
+.mprv-encore-grid { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 50px; }
+.mprv-encore-grid figure { margin: 0; }
+.mprv-encore-grid img { display: block; width: 100%; height: auto; }
+.mprv-encore-copy h3 { margin: 0 0 16px; font-size: 27px; line-height: 1.3; font-weight: 400; }
+.mprv-encore-copy > p { margin-bottom: 26px; }
+.mprv-games { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 28px; }
+.mprv-games-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.mprv-games-grid h4 { margin: 0 0 6px; font-size: 18px; font-weight: 400; }
+.mprv-games-grid p { margin: 0; line-height: 1.5; }
+.mprv-games + p { color: #73736b; margin-top: 24px; }
+@media (max-width: 700px) {
+  .mprv-intro-grid, .mprv-encore-grid { grid-template-columns: 1fr; gap: 24px; }
+  .mprv-encore-grid figure { width: 220px; margin-inline: auto; }
+}
+.mprv-page .contact-strip .eyebrow { color: #b6c5a4; }

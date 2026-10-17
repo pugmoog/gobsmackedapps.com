@@ -35,6 +35,20 @@
       "logo": "https://gobsmackedapps.com/app-icons/cake-dates.png",
       "link": "https://gobsmackedapps.com/apps/cake-dates/",
       "category": "Make Data Usable"
+    },
+    {
+      "title": "Context Matters",
+      "description": "A party game of mixed messages. You get one scene. Your audience gets another. Misunderstanding is the point.",
+      "logo": "https://gobsmackedapps.com/app-icons/context-matters.png",
+      "link": "https://gobsmackedapps.com/apps/context-matters/",
+      "category": "Bring People Together"
+    },
+    {
+      "title": "MPRV",
+      "description": "An improv club at your table. Build a story with friends, keep the laughter coming, and save the recording for a second laugh.",
+      "logo": "https://gobsmackedapps.com/app-icons/mprv.png",
+      "link": "https://gobsmackedapps.com/apps/mprv/",
+      "category": "Bring People Together"
     }
   ]
 }
