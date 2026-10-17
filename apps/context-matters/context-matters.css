@@ -1,0 +1,57 @@
+.context-matters-page { --soft: #f8f7f2; --line: #dfddd4; }
+.context-matters-page .app-detail-hero {
+  grid-template-columns: 150px minmax(0, 1fr) 230px;
+  gap: 36px;
+  align-items: start;
+  padding-block: 48px 60px;
+}
+.context-matters-page .app-detail-icon { height: auto; box-shadow: none; border-radius: 0; }
+.context-matters-page .app-detail-copy h1 { font-size: clamp(32px, 4.2vw, 52px); }
+.context-matters-page .app-detail-copy h2 { font-size: clamp(26px, 3vw, 38px); }
+.context-matters-page .app-detail-copy > p:not(.eyebrow) { font-size: 17px; line-height: 1.6; }
+.context-matters-page .app-detail-copy > p + p { margin-top: 28px; }
+.context-matters-page .app-detail-copy .context-tagline { color: #73736b; }
+.context-matters-page .app-detail-note { display: block; }
+.context-matters-page .context-coming-soon { color: white; background: var(--blue); cursor: default; }
+.context-hero-shot { margin: 0; }
+.context-hero-shot img, .context-matters-page .workflow-screen, .context-ipad-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid #262520;
+  border-radius: 27px;
+  box-shadow: 0 0 0 2px #dfddd4;
+}
+.context-matters-page .workflow-section { background: var(--soft); }
+.context-matters-page .workflow-grid li { background: white; border-color: var(--line); padding: 18px; }
+.context-matters-page .workflow-grid .step-number { color: #73736b; }
+.context-matters-page .workflow-grid p { font-size: 14px; line-height: 1.5; min-height: 9em; }
+.context-matters-page .workflow-screen { width: min(100%, 200px); margin-top: auto; }
+.context-caption { color: #66665e; font-size: 12px; margin: 24px 0 0; }
+.context-ipad-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
+.context-ipad-grid figure { margin: 0; }
+.context-ipad-grid figcaption { margin-bottom: 18px; }
+.context-ipad-grid img { border-radius: 24px; }
+.context-ipad-copy { text-align: center; margin-top: 24px; }
+.context-ipad-copy > p:first-child { font-size: 23px; margin-bottom: 6px; }
+.context-ipad-copy > p + p { color: #73736b; margin: 8px 0; }
+.context-matters-page .app-final-cta { background: var(--soft); }
+.context-matters-page .app-final-cta h2 { color: var(--ink); }
+.context-matters-page .app-final-cta p:not(.eyebrow) { color: #56564f; }
+@media (max-width: 1000px) {
+  .context-matters-page .app-detail-hero { grid-template-columns: 120px minmax(0, 1fr) 180px; gap: 24px; }
+  .context-matters-page .workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .context-matters-page .workflow-grid p { min-height: 6em; }
+}
+@media (max-width: 700px) {
+  .context-matters-page .app-detail-hero { grid-template-columns: 90px minmax(0, 1fr); gap: 20px; padding-block: 28px 40px; }
+  .context-matters-page .app-detail-product { grid-column: 1; grid-row: 1; }
+  .context-matters-page .app-detail-copy { display: block; grid-column: 2; }
+  .context-matters-page .app-detail-copy h1 { font-size: clamp(26px, 7vw, 42px); }
+  .context-matters-page .app-detail-copy h2 { font-size: 25px; }
+  .context-matters-page .app-detail-copy > p:not(.eyebrow) { font-size: 15px; }
+  .context-hero-shot { grid-column: 1 / -1; width: 210px; margin: 16px auto 0; }
+  .context-matters-page .workflow-grid, .context-ipad-grid { grid-template-columns: 1fr; }
+  .context-matters-page .workflow-grid p { min-height: 0; margin-bottom: 22px; }
+  .context-matters-page .workflow-screen { width: 220px; }
+}
